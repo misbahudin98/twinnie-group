@@ -1,0 +1,185 @@
+# Twinnie Group - Architecture, Knowledge Base & System Specifications (v2.8)
+
+> Ekosistem Layanan Kesehatan Ibu & Anak, Spa Bayi & Wanita, Terapi Holistik Medis, Konsultasi Psikologi & Kemitraan Investasi Berkelanjutan.
+
+## 1. Ikhtisar & Arsitektur Sistem (System Overview)
+Twinnie Group adalah jaringan kesehatan integratif keluarga berbasis di Malang Raya, Jawa Timur. Website ini dibangun dengan standar arsitektur performa tinggi:
+- **Arsitektur**: Pure Semantic HTML5, Modular Vanilla JS, Precompiled Tailwind CSS (< 50 KB), Zero Heavy Runtimes, Zero CDN compilers.
+- **Kecepatan Muat**: < 1.0 detik (Sub-second element & asset load time, aset teroptimasi lokal, font preloaded).
+- **Aturan Arsitektur**: DILARANG MEMBUAT FILE PHP. Seluruh antarmuka berjalan murni secara statis (HTML/CSS/JS) dengan integrasi pesan WhatsApp otomatis.
+- **Aksesibilitas (WCAG 2.1 AA Compliant & Ramah Baby Boomer)**:
+  - Mengadopsi prinsip desain ramah lansia: tipografi nyaman, kontras tinggi, navigasi intuitif.
+  - Skala teks minimum 16px–18px dengan line-height lega (`leading-relaxed`), kontras tinggi (Slate-900 di atas latar hangat `#fffdf9` / Stone-50).
+  - Target sentuh minimal 48px–54px pada semua tombol dan form input, mencegah salah klik bagi pengunjung senior.
+  - Motion halus berakselerasi GPU (`transform: translateY(...)`), bebas animasi berkedip atau memicu mabuk visual.
+- **Prinsip Desain: Keseimbangan Simetris & Asimetris**:
+  - *Desain Simetris*: Diterapkan pada kontainer utama, footer, grid testimonial video, FAQ, dan **bagian Jaringan Outlet 3 Kolom (`#lokasi`)**. Setiap outlet card memiliki proporsi, tinggi map iframe (`h-52`), dan bobot visual yang seimbang dan setara.
+  - *Desain Asimetris*: Diterapkan pada **Hero Section (Split 60/40)**. Sisi kiri adalah *Informational Anchor* (slogan emosional "Ketulusan Hati Membawa Keajaiban", deskripsi nilai, kategori pill buttons, CTA), sedangkan sisi kanan adalah *Interactive Visual Showcase* (kartu multimedia dinamis dalam rasio responsif).
+- **Hero Section: Desain Unboxed Elegan, Multiply Blend Mode & Kontrol Multimedia Penuh (ref.php)**:
+  - **Latar Belakang Hero**: Menggunakan foto parallax `assets/img/hero-3.jpg` dipadukan `.accent-overlay` berbasis `mix-blend-mode: multiply` berona rose maternal (`rgba(236, 72, 153, 0.90)`), menjaga tekstur fotografi alami tetap bernapas dan bercahaya.
+  - **Transisi Halus (`.hero-readability`)**: Gradien bawah lembut yang menyatukan section hero ke latar halaman hangat `#FFFDF9`.
+  - **Tipografi Editorial Mengambang (Unboxed)**: Sisi kiri tidak dikurung dalam boks gelap kaku, melainkan teks melayang bebas dengan whitespace lapang dan `hero-text-shadow`.
+  - **Slogan Hero**: `“Ketulusan Hati <span class="text-rose-200">Membawa Keajaiban</span>”` — Megah, menenangkan, dan berstandar majalah editorial internasional.
+  - **Floating Island Media Frame**: Sisi kanan menggunakan kartu putih bersih berbayangan lembut dalam (`.floating-island`), menyajikan video responsif, thumbnails track, logos strip, dan kontrol navigasi mobile selebar layar penuh.
+  - **Mikro-Interaksi Navbar**: Tautan navbar desktop dilengkapi animasi garis mawar geser (`.menu-item` & `.menu-underline`).
+- **Integrasi Map Iframe di Setiap Lokasi Outlet (`#lokasi`)**:
+  - Setiap cabang dilengkapi sematan peta mandiri Google Maps Iframe:
+    1. **Outlet 1: Twinnie Care & Nimpuna Terapi** (Villa Bunga Sepatu No. B-3, Lowokwaru, Malang) — `https://maps.google.com/maps?q=Villa+Bunga+Sepatu+No.B-3+Malang&t=&z=15&ie=UTF8&iwloc=&output=embed`
+    2. **Outlet 2: Allura Woman Spa** (Jl. Kadaka No.11, Lowokwaru, Malang) — `https://maps.google.com/maps?q=Jl.+Kadaka+No.11+Lowokwaru+Malang&t=&z=15&ie=UTF8&iwloc=&output=embed`
+    3. **Outlet 3: Biro Psikologi Rumah Ameera** (Jl. Sebuku No.19, Blimbing, Malang) — `https://maps.google.com/maps?q=Jl.+Sebuku+No.19+Blimbing+Malang&t=&z=15&ie=UTF8&iwloc=&output=embed`
+  - Semua iframe menggunakan atribut `loading="lazy"`, `title="..."`, `referrerpolicy="no-referrer-when-downgrade"`, dilengkapi tombol rute navigasi Google Maps dan tombol aksi langsung.
+- **Komponen Modular Terpadu (`components/`)**:
+  - `components/navbar.html`: Header disederhanakan hanya 3 menu utama (*Beranda*, *Tentang Kami*, *Kemitraan*) + tombol Pesan Layanan.
+  - `components/floating-action.html`: Tombol melayang compact (`px-3.5 py-2` / `px-4 py-2`) memuat WhatsApp Kemitraan (`+62 895-327-268977`) dan "Pesan Layanan" yang konsisten di semua halaman.
+  - `components/booking-modal.html`: Modal pemesanan responsif (Laptop 3-kolom lega vs HP 1-tampilan cohesive tanpa scroll panjang).
+  - `components/footer.html`: Master footer memuat strip 9 mitra resmi lengkap dengan logo dan nama, alamat cabang, link peta outlet, kontak WhatsApp, serta hak cipta. Digunakan ulang secara konsisten di `index.html`, `tentang-kami.html`, dan `kemitraan.html` via static reuse dan didukung helper dinamis `loadModularComponents()` di `main.js`.
+  - `README.md`: Panduan arsitektur lengkap dan riwayat pembuatan proyek dari nol untuk junior web developer.
+- **Kontak WhatsApp Resmi**:
+  - Investor Relations & Kemitraan: `+62 895-327-268977`
+  - Layanan Ibu & Bayi (Twinnie Care): `+62 897-270-3833`
+  - Konsultasi Psikolog (Rumah Ameera): `+62 813-334-30080`
+  - Allura Woman Spa: `+62 897-270-3833`
+
+---
+
+## 2. Struktur Tim Tenaga Ahli (Key Experts)
+1. **Indah Maswari Agustin, Amd.Keb** (Head of Maternal & Pediatric Care) — Kebidanan, newborn care, laktasi, penanganan bendungan ASI, pijat relaksasi ibu. Foto: `assets/img/indah-maswari-agustin.amd.keb.jpg`.
+2. **Tjahya Kuntjoro, SE** (Strategic Business & Investment Director) — Tata kelola investasi syariah, metode Sukuk, analisis kelayakan outlet mandiri. Foto: `assets/img/tjahya-kuntjoro.SE.jpg`.
+3. **Retno Sri Handayani, M.Pd., M.Psi** (Lead Clinical Psychologist & Family Consultant) — Psikolog klinis, postpartum support (*baby blues*), hipnoterapi, Mental Health Check-Up (MHCU). Foto: `assets/img/psikolog.jpg`.
+
+---
+
+## 3. Mitra & Jaringan Kolaborasi di Footer (9 Partners with Logos & Names)
+Setiap mitra ditampilkan di footer seluruh halaman dengan logo circular dan label nama:
+1. **Twinnie Care** (`assets/img/logo-twinnie.jpg`) — Layanan Ibu, Bayi & Anak (Villa Bunga Sepatu B-3, Malang)
+2. **Allura Woman Spa** (`assets/img/logo-allura.jpg`) — Spa Eksklusif Wanita (Jl. Kadaka No.11, Jatimulyo, Malang)
+3. **Nimpuna Terapi Holistik** (`assets/img/logo-nimpuna.jpg`) — Terapi Medis & Bekam Steril (Villa Bunga Sepatu B-3, Malang)
+4. **Rumah Ameera Biro Psikologi** (`assets/img/logo-rumah-ameera.jpg`) — Konseling & Tumbuh Kembang (Jl. Sebuku No.19, Bunulrejo, Malang)
+5. **Psikolog Klinis** (`assets/img/logo-psikolog.jpg`) — Konseling & Hipnoterapi
+6. **UK Family Care** (`assets/img/logo-uk-family-care.png`) — Perawatan Keluarga & Praktik Pratama
+7. **SMK Taruna Bhakti (STABHA)** (`assets/img/logo-stabha.png`) — Kerjasama Edukasi & Vokasi Terapis
+8. **Mufi Journey** (`assets/img/logo-mufi.png`) — Wellness Partner & Komunitas Parenting
+9. **Universitas Kepanjen** (`assets/img/logo_univ_kepanjen.png`) — Afiliasi Riset & Standar Mutu Akademik
+
+---
+
+## 4. Ekstraksi Katalog Layanan & Kebijakan Allura Visit Outlet (Instructions 5 & 6)
+
+### A. Kategori Twinnie Care - Ibu, Bayi & Anak (`baby-spa`) - Outlet: Twinnie Care
+*Seluruh paket perawatan ibu (maternal care) kini dipusatkan ke Twinnie Care bersama layanan bayi & anak, dapat dikunjungi ke outlet atau dipanggil ke rumah (Home Visit Malang & Batu maks 10km).*
+- **Baby Massage (0 - 12 Bulan)**: Outlet Rp 50.000 | Home Visit Rp 64.000 (Durasi 45-60 menit)
+- **Baby Massage (12 - 24 Bulan)**: Outlet Rp 60.000 | Home Visit Rp 74.000 (Durasi 45-60 menit)
+- **Kids Massage (2 - 4 Tahun)**: Outlet Rp 70.000 | Home Visit Rp 84.000 (Durasi 60-90 menit)
+- **Kids Massage (4 - 6 Tahun)**: Outlet Rp 80.000 | Home Visit Rp 94.000 (Durasi 60-90 menit)
+- **Kids Massage (6 - 8 Tahun)**: Outlet Rp 90.000 | Home Visit Rp 104.000 (Durasi 60-90 menit)
+- **Baby Spa Lengkap (Gym + Swim + Bath + Massage)**: Outlet Rp 120.000 | Home Visit Rp 140.000
+- **Baby Swim (Whirlpool Therapy)**: Outlet Rp 70.000 | Home Visit: Tidak Tersedia (Khusus Outlet)
+- **Cukur Rambut Bayi (Vacuum Anti-Lecet)**: Outlet Rp 25.000 | Home Visit Rp 64.000
+- **Tindik Telinga Bayi Steril**: Outlet Rp 35.000 | Home Visit Rp 50.000
+- **Screening Tumbuh Kembang (Bidan/Dokter)**: Outlet Rp 50.000 | Home Visit Rp 65.000
+- **Terapi Wicara Si Kecil (Speech Delay)**: Outlet Rp 150.000 | Home Visit Rp 164.000
+- **Massage Batuk Pilek Baby (1 - 24 Bulan)**: Outlet Rp 85.000 | Home Visit Rp 99.000
+- **Massage Batuk Pilek Kids (2 - 8 Tahun)**: Outlet Rp 105.000 | Home Visit Rp 119.000
+- **Paket Terapi Bapil Lengkap Baby 1x (Massage + Nebulizer + IR)**: Outlet Rp 120.000 | Home Visit Rp 134.000
+- **Paket Terapi Bapil Lengkap Baby 3x Terapi (Intensif)**: Outlet Rp 345.000 | Home Visit Rp 387.000
+- **Paket Terapi Bapil Lengkap Kids 1x (Massage + Nebulizer + IR)**: Outlet Rp 150.000 | Home Visit Rp 164.000
+- **Paket Terapi Bapil Lengkap Kids 3x Terapi (Intensif)**: Outlet Rp 435.000 | Home Visit Rp 477.000
+- **Paket Newborn Care 1 (3x Kunjungan Home Visit)**: Rp 199.000
+- **Paket Newborn Care 2 (5x Kunjungan Home Visit)**: Rp 349.000
+- **Paket Newborn Care 3 (7x Kunjungan Home Visit)**: Rp 499.000
+- **Paket Selapanan 35 Hari (Home Visit Ibu & Bayi)**: Rp 219.000
+- **Pijat ASI Lancar & Stimulasi Oksitosin (Twinnie Mom)**: Outlet Rp 130.000 | Home Visit Rp 145.000 (90 Menit)
+- **Pijat Bendungan ASI & Drainase Payudara (Twinnie Mom)**: Outlet Rp 170.000 | Home Visit Rp 185.000 (90-120 Menit)
+- **Pijat Relaksasi Full Body Ibu Pascasalin**: Outlet Rp 135.000 | Home Visit Rp 150.000 (60 Menit)
+- **Pijat Relaksasi Aromaterapi Full Body Ibu**: Outlet Rp 165.000 | Home Visit Rp 180.000 (90 Menit)
+- *Add-ons*: Pergantian Air Kolam Baru (+Rp 30.000), Cuci Hidung Steril (+Rp 35.000), Masker Nebulizer Baru (+Rp 30.000), Additional Bath (+Rp 15.000), Tambah Durasi Relaksasi 30 Menit (+Rp 30.000), Minyak Aromaterapi Premium (+Rp 35.000).
+
+### B. Kategori Allura Woman Spa (`woman-spa`) - VISIT OUTLET & LANGSUNG CHAT WA (Instructions 5 & 6)
+*Catatan: Seluruh paket pelatihan/diklat telah dihapuskan 100%. Allura difokuskan khusus visit outlet & langsung chat WhatsApp.*
+- **Layanan Allura Woman Spa**: Kunjungan langsung ke Outlet Allura Daily Spa (Jl. Kadaka No.11, Lowokwaru, Malang).
+- **Sistem Reservasi**: Pengunjung dapat membuka rute lokasi Google Maps langsung atau menekan tombol **Chat WhatsApp** (`+62 897-270-3833`) untuk konsultasi dan penyesuaian jadwal terapis.
+- **Tarif**: Visit Outlet / Konfirmasi Perawatan Langsung via WhatsApp.
+
+### C. Kategori Terapi Holistik Medis Nimpuna (`holistic`) - Outlet: Nimpuna (Villa Bunga Sepatu B-3)
+- **Terapi Holistik Otot & Akupresur (60 Menit)**: Outlet Rp 120.000 | Home Visit Rp 120.000 (+ transport)
+- **Terapi Bekam Medik Steril & Diagnosa Lidah (60 Menit)**: Outlet Rp 100.000 | Home Visit Rp 100.000 (+ transport)
+- **Terapi Holistik Medis Intensif (90 Menit)**: Outlet Rp 150.000 | Home Visit Rp 150.000 (+ transport)
+- **Terapi Khusus Skoliosis / Saraf Kejepit (120 Menit)**: Outlet Rp 200.000 | Home Visit Rp 200.000 (+ transport)
+- *Add-ons*: Cek Darah Lengkap (+Rp 50.000), Minyak Herbal Saraf (+Rp 25.000).
+
+### D. Kategori Biro Psikologi & Konseling Rumah Ameera (`psikolog`) - Outlet: Jl. Sebuku No.19
+- **Konseling Psikologi Keluarga & Pascasalin (60 Menit)**: Outlet Rp 150.000 | Home Visit Rp 175.000
+- **Sesi Psikoterapi Klinis Terarah (90 Menit)**: Outlet Rp 200.000 | Home Visit Rp 225.000
+- **Hipnoterapi Klinis Bersertifikasi (90 - 120 Menit)**: Outlet Rp 250.000 | Home Visit Rp 275.000
+- **Mental Health Check-Up (MHCU) Awal + Sesi Konseling**: Outlet Rp 250.000 | Home Visit Rp 275.000
+- **Mental Health Check-Up (MHCU) Lengkap + Laporan Resmi**: Outlet Rp 400.000 | Home Visit Rp 425.000
+- *Add-ons*: Sesi Monitoring & Evaluasi 30 Menit (+Rp 75.000).
+
+---
+
+## 5. Model Kemitraan & Investasi Syariah (Sukuk Method)
+1. **Kemitraan Murni (Profit Sharing)**:
+   - **Rp 20 Juta**: Bagi hasil 2,5% per tahun (1 Marketing + 2 Terapis).
+   - **Rp 50 Juta**: Bagi hasil 5% selama 2 tahun (1 Marketing + 4 Terapis).
+   - **Rp 150 Juta**: Bagi hasil 10% PER BULAN selama 3 tahun (1 Marketing + 4 Terapis + Fasilitas Outlet).
+2. **Metode Sukuk Syariah (Musyarakah/Mudharabah)**:
+   - Bebas riba, gharar, dan maysir. Dividen cair bulanan/tahunan.
+   - **Klausul Proteksi Pailit**: Jika terjadi kepailitan, modal dikembalikan sesuai akta notaris.
+3. **Distributor / Outlet Mandiri**:
+   - Keuangan dan arus kas outlet mandiri **terisolasi 100% (*ring-fenced*)** dari Twinnie Group pusat.
+- **Pendaftaran Kemitraan WhatsApp**: [+62 895-327-268977](https://wa.me/62895327268977?text=Halo%20Twinnie%20Group,%20saya%20tertarik%20mengajukan%20kemitraan%20investasi)
+
+---
+
+## 6. Arsitektur Parallax & Tirai Bergantian (Alternating Parallax & Curtain Solid Sections)
+1. **Pola Selang-Seling Antar Section (Cadence Gambar vs Warna Solid Kontras)**:
+   - **`index.html`**: Hero [G] -> Layanan [W] -> Testimoni [G] -> Tenaga Ahli [W] -> Outlet [G] -> FAQ [W] -> Footer [W].
+   - **`tentang-kami.html`**: Hero [G] -> Sejarah [W] -> Visi Misi [G] -> Nilai [W] -> Tenaga Ahli [G] -> Afiliasi [W] -> Outlet [G] -> CTA & Footer [W].
+   - **`kemitraan.html`**: Hero [G] -> Sukuk Syariah [W] -> Outlet [G] -> Footer [W].
+2. **Arsitektur Stacking Context Mandiri (`isolation: isolate`) & Bugfix Gambar Putih**:
+   - Container `.parallax-section` disematkan `isolation: isolate; z-index: 1; position: relative; overflow: hidden;` agar child layer tidak terperosok ke belakang background solid `<body>`.
+   - Layer foto `.parallax-bg-layer` diset pada `z-index: 1;`.
+   - Tirai solid `.curtain-solid-section` diset pada `z-index: 20;` sehingga meluncur tepat di atas layer foto tanpa terpotong.
+3. **Layer Penutup Rose Sesuai Best Practice & Footer Ergonomis (Instructions 6, 7 & 8)**:
+   - Layer penutup gambar rose `.hero-pink-glass-layer`, `.accent-overlay`, dan `.parallax-rose-veil` menggunakan formula gradien maternal terbaik: `linear-gradient(135deg, rgba(225, 29, 72, 0.88) 0%, rgba(236, 72, 153, 0.84) 50%, rgba(244, 63, 94, 0.82) 100%)` (desktop: `0.86` s/d `0.80`) dengan `mix-blend-mode: multiply;` (bebas backdrop-filter blur) + `.hero-readability` gradien dua arah (top shadow tipis + soft dissolve ke `#FFFDF9`).
+   - Diterapkan secara seragam dan konsisten pada `index.html`, `tentang-kami.html`, dan `kemitraan.html`. Teks putih hero menyala tajam dan hidup dengan rasio kontras > 8.5:1.
+   - Setting komponen footer: kanvas memenuhi layar penuh dengan kelas .footer-warm-dark (background-color: #0e0912; radial-gradient mawar; border-top: 1px solid rgba(244,63,94,0.25)) dan ambient rose halo (h-36 bg-rose-500/10 blur-3xl), container dalam ergonomis max-w-7xl mx-auto px-4 sm:px-6 lg:px-8, kartu partner translusen bg-white/[0.04] dengan wadah logo putih bersih, dan navigasi 4 kolom yang seragam di ketiga halaman.
+   - Harmoni tipografi & kontras: section berlatar rose veil (`#lokasi`, `#tenaga-ahli`) menggunakan teks putih tajam dengan `hero-text-shadow`, sedangkan section berlatar tirai solid menggunakan teks arang gelap `text-slate-900` dengan rasio kontras > 12:1.
+4. **Zero Silent Failure & Aksesibilitas 100% (WCAG 2.1 AA)**:
+   - Seluruh elemen button dan link dilengkapi accessible label (`aria-label`) eksplisit.
+   - Event delegation pada `booking.js` dan `main.js` mengikat semua trigger `[data-open-booking]` tanpa silent failure.
+   - Tersedia panduan komprehensif `README.md` untuk developer junior mengenai evolusi proyek dari starter legacy hingga arsitektur produksi.
+
+---
+
+## 7. Kurasi Bukti Sosial & Ketentuan Home Visit (HD Refinement v2.9)
+1. **Tepat 3 Video Testimoni HD Widescreen (16:10 / 800x500)**:
+   - Background Section: Parallax foto maternal `assets/img/baby-6.jpg` + `.parallax-rose-veil` berona mawar beludru + tajuk putih megah `hero-text-shadow` (kontras > 9:1).
+   - Video 1: Sambutan Resmi Bupati Malang (Bpk. H. Sanusi). Poster HD: `assets/img/testi-3.jpg` (800x500, bokeh exhibition, seragam ber-lencana resmi). Kutipan: *"Derajat kesehatan masyarakat itu sangat penting dengan cek kesehatan dini dan pola hidup sehat mulai dari diri sendiri" — H. Sanusi. (Bupati Malang)*.
+   - Video 2: Kasus Rehabilitasi Bell's Palsy (Nimpuna Terapi). Poster HD: `assets/img/testi-4.jpg` (800x500 dual-view: terapi akupresur wajah + diagram klinis).
+   - Video 3: Penanganan Skoliosis Punggung Berat. Poster HD: `assets/img/testi-1.jpg` (800x500 side-by-side: traksi membungkuk tanpa nyeri + jalan tegak seimbang).
+2. **Tepat 3 Chat Autentik WhatsApp (Full Square 1:1 Resolution)**:
+   - Frame utuh tanpa pemotongan: `aspect-square` dengan tombol pembesar `🔍 Perbesar` dan integrasi modal lightbox.
+   - Chat 1: Pijat Kolik Bayi 1 Bulan (`assets/img/testi-massage.jpg`, 1080x1080) — Tidur pulas pascamassage.
+   - Chat 2: Terapi Batuk Pilek Balita (`assets/img/testi-bapil.jpg`, 1080x1080) — 1x terapi bapil sembuh.
+   - Chat 3: Pijat Laktasi & Bendungan ASI (`assets/img/testi-laktasi.jpg`, 1080x1080) — ASI lancar melimpah.
+3. **Ketentuan Home Visit**:
+   - "Layanan Home Visit Area Kota Malang, Kab. Malang & Kota Batu (Maks. 10km)" terpasang di announcement bar, hero badge, dan FAQ seluruh halaman.
+4. **Harmonisasi Warna Antar-Section Lintas Halaman**:
+   - Section Parallax: Foto resolusi tinggi + Maternal Rose Veil + Teks Putih Hero Text Shadow + Floating White Glass Cards.
+   - Section Tirai Solid: Kanvas Warm Ivory (`#FFFDF9`) seragam di `index.html`, `tentang-kami.html`, `kemitraan.html` + Teks Slate-900 (kontras > 12:1).
+   - Footer: Warm Luxury Obsidian (`.footer-warm-dark`, `#0e0912`) dengan Ambient Rose Halo.
+
+---
+
+## 8. Desain Ergonomis Peta Jaringan Outlet & Footer Proporsional (v2.8 Refinement)
+1. **Peta Lokasi & Fasilitas Pelayanan (`#lokasi`)**:
+   - Kartu pulau mengambang mewah (`bg-white/95 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-white/80 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group`).
+   - Top brand accent ribbon (Twinnie: Rose/Pink, Allura: Emerald/Teal, Ameera: Indigo/Purple).
+   - Bingkai iframe peta interaktif dengan floating badge (`Cabang Lowokwaru`, `Cabang Jatimulyo`, `Cabang Blimbing`) dan penanda `Peta Interaktif`.
+   - Rincian fasilitas terstruktur: 🕒 Jam Operasional, ✨ Layanan Unggulan, 🚗 Fasilitas Penunjang (Parkir, Ruang AC Steril UV-C).
+   - Tombol aksi simetris berkontras tinggi: Buka Rute Google Maps dan Tombol Aksi Utama (Reservasi, WhatsApp, Konsultasi).
+2. **Master Footer Proporsional & Harmonis**:
+   - Strip 9 mitra resmi dengan pola grid simetris 3x3 di mobile (`grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9`), wadah logo putih bersih (`w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white p-1`), dan teks anti-wrap (`truncate`).
+   - Saluran kontak WhatsApp terpisah dan berkontras tinggi per kategori (Ibu & Bayi, Investor, Psikologi).
+   - Kanvas maternal obsidian hangat (.footer-warm-dark, #0e0912 dengan radial rose glow dan border rose hangat) memenuhi layar penuh dengan container ergonomis max-w-7xl mx-auto px-4 sm:px-6 lg:px-8, serta ambient halo blur di tepi atas.
