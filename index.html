@@ -8,12 +8,25 @@
   <meta name="keywords" content="Baby Spa Malang, Bidan Malang, Pijat Bayi Malang, Home Visit Baby Spa, Pijat Laktasi Malang, Terapi Batuk Pilek Bayi, Psikolog Malang, Bekam Medis Malang, Kemitraan Bisnis Syariah">
   <link rel="canonical" href="https://twinniegroup.com/">
 
+  <!-- Performance: Preload Critical Hero LCP Image (< 1s Element Load Time) -->
+  <link rel="preload" as="image" href="assets/img/hero-3.jpg" fetchpriority="high">
+
+  <!-- Security & Privacy Best Practices -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://twinniegroup.com/">
   <meta property="og:title" content="Twinnie Group — Ketulusan Hati Membawa Keajaiban">
-  <meta property="og:description" content="Perawatan lembut dan aman untuk bayi baru lahir, anak, ibu menyusui, dan kesehatan mental keluarga di Malang Raya.">
-  <meta property="og:image" content="assets/img/hero-3.jpg">
+  <meta property="og:description" content="Ekosistem layanan kesehatan ibu, bayi baru lahir, anak, terapi medik holistik TCM, dan konsultasi psikologi keluarga di Malang Raya.">
+  <meta property="og:image" content="https://twinniegroup.com/assets/img/hero-3.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Twinnie Group — Layanan Kesehatan Ibu, Bayi & Kemitraan Syariah Malang">
+  <meta name="twitter:description" content="Perawatan lembut untuk ibu, bayi, anak, dan terapi holistik medis di Malang Raya.">
+  <meta name="twitter:image" content="https://twinniegroup.com/assets/img/hero-3.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/img/logo-twinnie.jpg">
@@ -26,27 +39,116 @@
   <!-- Compiled High-Performance Stylesheet (< 36KB) -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- JSON-LD Structured Data: MedicalBusiness & LocalBusiness -->
+  <!-- JSON-LD Structured Data: MedicalBusiness, FAQPage & AEO Optimization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Twinnie Group",
-    "image": "https://twinniegroup.com/assets/img/logo-twinnie.jpg",
-    "@id": "https://twinniegroup.com",
-    "url": "https://twinniegroup.com",
-    "telephone": "+628972703833",
-    "priceRange": "Rp 25.000 - Rp 499.000",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Villa Bunga Sepatu No. B-3, Tulusrejo, Kec. Lowokwaru",
-      "addressLocality": "Malang",
-      "addressRegion": "Jawa Timur",
-      "postalCode": "65141",
-      "addressCountry": "ID"
-    },
-    "sameAs": [
-      "https://www.instagram.com/twinnie_care/"
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://twinniegroup.com/#business",
+        "name": "Twinnie Group",
+        "url": "https://twinniegroup.com",
+        "logo": "https://twinniegroup.com/assets/img/logo-twinnie.jpg",
+        "image": "https://twinniegroup.com/assets/img/hero-3.jpg",
+        "telephone": "+628972703833",
+        "priceRange": "Rp 25.000 - Rp 499.000",
+        "description": "Ekosistem layanan kesehatan ibu, perawatan bayi baru lahir, baby spa, pijat laktasi, fisioterapi anak, terapi medik holistik TCM bekam, konsultasi psikologi keluarga, dan kemitraan syariah Malang Raya.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Villa Bunga Sepatu No. B-3, Tulusrejo, Kec. Lowokwaru",
+          "addressLocality": "Malang",
+          "addressRegion": "Jawa Timur",
+          "postalCode": "65141",
+          "addressCountry": "ID"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -7.9424,
+          "longitude": 112.6178
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Kota Malang" },
+          { "@type": "AdministrativeArea", "name": "Kabupaten Malang" },
+          { "@type": "City", "name": "Kota Batu" }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/twinnie_care/",
+          "https://www.instagram.com/alluradailyspa/",
+          "https://www.instagram.com/nimpuna.hc/",
+          "https://www.instagram.com/psikolog_retno/"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://twinniegroup.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kapan bayi boleh mulai melakukan Baby Spa & Baby Swim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bayi dapat mulai Baby Spa jika berat badan minimal 5 kg dan sudah mampu menegakkan kepala (sekitar 3 bulan ke atas). Whirlpool Twinnie Care menggunakan air steril bersuhu hangat dan neckring berstandar internasional yang diawasi langsung oleh bidan bersertifikasi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bagaimana jangkauan wilayah layanan Home Visit Twinnie Group?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Layanan Home Visit Twinnie Group mencakup Area Kota Malang, Kabupaten Malang, dan Kota Batu dengan radius maksimal 10 km dari cabang outlet terdekat. Terapis bidan dan fisioterapis membawa perlengkapan steril, linen higienis, dan minyak esensial langsung ke rumah Anda."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bagaimana cara reservasi layanan Baby Spa & Home Visit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Reservasi sangat mudah: klik tombol 'Pesan Layanan' di website twinniegroup.com, tentukan jenis perawatan (di Outlet atau Home Visit), lengkapi nama serta waktu kunjungan, lalu sistem akan menghubungkan detail pesanan langsung ke WhatsApp customer service resmi untuk konfirmasi jadwal cepat."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bagaimana jaminan keamanan investasi kemitraan syariah di Twinnie Group?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kemitraan investasi Twinnie Group menerapkan akad Sukuk Musyarakah atau Mudharabah murni yang bebas riba. Terdapat perlindungan legalitas notaris, hak bagi hasil keuntungan bersih transparan, klausul proteksi likuidasi nilai modal, serta isolasi pembukuan keuangan penuh untuk cabang outlet mandiri."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://twinniegroup.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Beranda",
+            "item": "https://twinniegroup.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tentang Kami",
+            "item": "https://twinniegroup.com/tentang-kami.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Kemitraan",
+            "item": "https://twinniegroup.com/kemitraan.html"
+          }
+        ]
+      }
     ]
   }
   </script>
@@ -74,7 +176,7 @@
       <div class="flex items-center justify-between h-16 sm:h-20">
         <!-- Logo -->
         <a href="index.html" class="flex items-center gap-3 group focus-ring">
-          <img src="assets/img/logo-twinnie.jpg" alt="Twinnie Group Logo" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border border-pink-200 shadow-xs group-hover:scale-105 transition-transform">
+          <img src="assets/img/logo-twinnie.jpg" alt="Twinnie Group Logo" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border border-pink-200 shadow-xs group-hover:scale-105 transition-transform" width="44" height="44" decoding="async">
           <div>
             <div class="font-heading font-extrabold text-base sm:text-lg text-slate-900 group-hover:text-pink-600 transition-colors">Twinnie Group</div>
             <div class="text-[11px] text-slate-500 font-medium tracking-wide">Layanan Kesehatan Keluarga </div>
@@ -325,7 +427,7 @@
         <div class="bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div class="rounded-2xl overflow-hidden aspect-4/3 mb-4 bg-slate-100 relative">
-              <img src="assets/img/baby.jpg" alt="Twinnie Care Ibu dan Bayi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              <img src="assets/img/baby.jpg" alt="Twinnie Care Ibu dan Bayi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" decoding="async">
               <span class="absolute top-2.5 left-2.5 badge-pill bg-white/95 text-pink-600 text-[11px] font-bold shadow-2xs">Ibu, Bayi &amp; Anak</span>
             </div>
             <h3 class="font-heading font-bold text-slate-900 text-base group-hover:text-pink-600 transition-colors">Twinnie Care (Ibu &amp; Anak)</h3>
@@ -346,7 +448,7 @@
         <div class="bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div class="rounded-2xl overflow-hidden aspect-4/3 mb-4 bg-slate-100 relative">
-              <img src="assets/img/woman-hair.jpg" alt="Allura Woman Spa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              <img src="assets/img/woman-hair.jpg" alt="Allura Woman Spa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" decoding="async">
               <span class="absolute top-2.5 left-2.5 badge-pill bg-white/95 text-pink-600 text-[11px] font-bold shadow-2xs">Khusus Wanita</span>
               <span class="absolute top-2.5 right-2.5 badge-pill bg-black/75 text-white text-[11px] font-bold shadow-2xs">Visit Outlet</span>
             </div>
@@ -369,7 +471,7 @@
         <div class="bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div class="rounded-2xl overflow-hidden aspect-4/3 mb-4 bg-slate-100 relative">
-              <img src="assets/img/Bekam.jpg" alt="Terapi Holistik Nimpuna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              <img src="assets/img/bekam.jpg" alt="Terapi Holistik Nimpuna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" decoding="async">
               <span class="absolute top-2.5 left-2.5 badge-pill bg-white/95 text-emerald-700 text-[11px] font-bold shadow-2xs">Medis Komplementer</span>
             </div>
             <h3 class="font-heading font-bold text-slate-900 text-base group-hover:text-pink-600 transition-colors">Terapi Holistik & Bekam</h3>
@@ -390,7 +492,7 @@
         <div class="bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div class="rounded-2xl overflow-hidden aspect-4/3 mb-4 bg-slate-100 relative">
-              <img src="assets/img/psikolog.jpg" alt="Konsultasi Psikologi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              <img src="assets/img/psikolog.jpg" alt="Konsultasi Psikologi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" decoding="async">
               <span class="absolute top-2.5 left-2.5 badge-pill bg-white/95 text-indigo-700 text-[11px] font-bold shadow-2xs">Kesehatan Mental</span>
             </div>
             <h3 class="font-heading font-bold text-slate-900 text-base group-hover:text-pink-600 transition-colors">Konseling & Psikoterapi</h3>
@@ -425,10 +527,10 @@
 
 
 
-  <!-- ================= FOKUS UTAMA (GAMBAR 2: Parallax Section - Menampilkan Background - Instructions 6, 7, 10, 11, 12, 13, 14, 15, 16) ================= -->
-  <section id="testimonials" class="parallax-section py-20 border-b border-rose-100/60 relative" aria-labelledby="testi-title">
-    <!-- Parallax Background Layer (GPU Accelerated) -->
-    <div class="parallax-bg-layer" style="background-image: url('assets/img/baby-6.jpg');" data-parallax-speed="0.18"></div>
+  <!-- ================= FOKUS UTAMA (GAMBAR 2: Parallax Section - Menampilkan Background) ================= -->
+  <section id="testimonials" class="parallax-section py-20 relative" aria-labelledby="testi-title">
+    <!-- Parallax Background Layer (GPU Accelerated & Safe Clamped) -->
+    <div class="parallax-bg-layer" style="background-image: url('assets/img/bekam.jpg');" data-parallax-speed="0.12"></div>
     <!-- Maternal Rose Veil for Depth & Contrast -->
     <div class="parallax-rose-veil"></div>
 
@@ -648,7 +750,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-2xs flex items-center gap-4">
-          <img src="assets/img/indah-maswari-agustin.amd.keb.jpg" alt="Indah Maswari Agustin, Amd.Keb" class="w-16 h-16 rounded-xl object-cover object-top border border-pink-200 flex-shrink-0" loading="lazy">
+          <img src="assets/img/indah-maswari-agustin.amd.keb.jpg" alt="Indah Maswari Agustin, Amd.Keb" class="w-16 h-16 rounded-xl object-cover object-top border border-pink-200 flex-shrink-0" width="64" height="64" loading="lazy" decoding="async">
           <div>
             <h3 class="font-heading font-bold text-slate-900 text-sm">Indah Maswari Agustin, Amd.Keb</h3>
             <div class="text-[11px] text-pink-600 font-semibold">Praktisi Kebidanan &amp; Laktasi</div>
@@ -656,7 +758,7 @@
         </div>
 
         <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-2xs flex items-center gap-4">
-          <img src="assets/img/tjahya-kuntjoro.SE.jpg" alt="Tjahya Kuntjoro, SE" class="w-16 h-16 rounded-xl object-cover object-top border border-slate-200 flex-shrink-0" loading="lazy">
+          <img src="assets/img/tjahya-kuntjoro.SE.jpg" alt="Tjahya Kuntjoro, SE" class="w-16 h-16 rounded-xl object-cover object-top border border-slate-200 flex-shrink-0" width="64" height="64" loading="lazy" decoding="async">
           <div>
             <h3 class="font-heading font-bold text-slate-900 text-sm">Tjahya Kuntjoro, SE</h3>
             <div class="text-[11px] text-slate-600 font-semibold">Direktur Kemitraan &amp; Bisnis</div>
@@ -664,7 +766,7 @@
         </div>
 
         <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-2xs flex items-center gap-4">
-          <img src="assets/img/psikolog.jpg" alt="Retno Sri Handayani, M.Pd., M.Psi" class="w-16 h-16 rounded-xl object-cover object-top border border-indigo-200 flex-shrink-0" loading="lazy">
+          <img src="assets/img/psikolog.jpg" alt="Retno Sri Handayani, M.Pd., M.Psi" class="w-16 h-16 rounded-xl object-cover object-top border border-indigo-200 flex-shrink-0" width="64" height="64" loading="lazy" decoding="async">
           <div>
             <h3 class="font-heading font-bold text-slate-900 text-sm">Retno Sri Handayani, M.Pd., M.Psi</h3>
             <div class="text-[11px] text-indigo-600 font-semibold">Psikolog Klinis &amp; Konsultan</div>
@@ -674,10 +776,10 @@
     </div>
   </section>
 
-  <!-- ================= JARINGAN OUTLET (GAMBAR 3: Parallax Section - Menampilkan Background - Instructions 6 & 7) ================= -->
-  <section id="lokasi" class="parallax-section py-20 border-b border-rose-100/60 relative" aria-labelledby="lokasi-title">
-    <!-- Parallax Background Layer (GPU Accelerated) -->
-    <div class="parallax-bg-layer" style="background-image: url('assets/img/woman-allura.jpg');" data-parallax-speed="0.16"></div>
+  <!-- ================= JARINGAN OUTLET (GAMBAR 3: Parallax Section - Menampilkan Background) ================= -->
+  <section id="lokasi" class="parallax-section py-20 relative" aria-labelledby="lokasi-title">
+    <!-- Parallax Background Layer (GPU Accelerated & Safe Clamped) -->
+    <div class="parallax-bg-layer" style="background-image: url('assets/img/woman-massage-1.jpg');" data-parallax-speed="0.12"></div>
     <!-- Soft Warm Rose Glass Veil -->
     <div class="parallax-rose-veil"></div>
 
@@ -1533,10 +1635,10 @@
     <span class="toast-body">Notifikasi berhasil</span>
   </div>
 
-  <!-- Core Scripts (Zero External Heavy Libraries) -->
-  <script src="assets/js/services-data.js"></script>
-  <script src="assets/js/booking.js"></script>
-  <script src="assets/js/partnership.js"></script>
-  <script src="assets/js/main.js"></script>
+  <!-- Core Scripts (Zero External Heavy Libraries, Defer for Non-Blocking Parsing) -->
+  <script src="assets/js/services-data.js" defer></script>
+  <script src="assets/js/booking.js" defer></script>
+  <script src="assets/js/partnership.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

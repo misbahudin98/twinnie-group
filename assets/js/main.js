@@ -77,7 +77,7 @@
 
   /**
    * Parallax Scroll Effect (GPU Accelerated, Lightweight with rAF)
-   * Handles Hero parallax and alternating section parallax backgrounds (Instruction 6)
+   * Mathematically clamped to prevent any bottom/top gap or whitespace (Instructions 1 & 2)
    */
   let isParallaxTicking = false;
   function handleParallaxScroll() {
@@ -85,26 +85,37 @@
     isParallaxTicking = true;
 
     requestAnimationFrame(() => {
-      const scrollPos = window.pageYOffset;
+      const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
 
-      // 1. Hero Parallax
-      if (dom.heroBg && dom.heroSection && scrollPos < 1100) {
-        dom.heroBg.style.transform = `translate3d(0, ${scrollPos * 0.28}px, 0)`;
+      // 1. Hero Parallax: Clamped safely within the 40% buffer
+      if (dom.heroBg && dom.heroSection && scrollPos < 1400) {
+        const heroHeight = dom.heroSection.offsetHeight || 600;
+        const maxHeroOffset = heroHeight * 0.18;
+        const heroOffset = Math.min(scrollPos * 0.20, maxHeroOffset);
+        dom.heroBg.style.transform = `translate3d(0, ${heroOffset.toFixed(1)}px, 0)`;
       }
 
-      // 2. Multi-section Parallax Layers across the page
+      // 2. Alternating Section Parallax Layers across the page
       const parallaxLayers = document.querySelectorAll('.parallax-bg-layer');
       parallaxLayers.forEach(layer => {
         if (dom.heroBg && layer === dom.heroBg) return;
         const parent = layer.parentElement;
         if (!parent) return;
         const rect = parent.getBoundingClientRect();
+        
         // Animate only when near viewport
         if (rect.top < windowHeight + 100 && rect.bottom > -100) {
-          const speed = parseFloat(layer.getAttribute('data-parallax-speed')) || 0.16;
-          const offset = (rect.top - windowHeight / 2) * speed;
-          layer.style.transform = `translate3d(0, ${offset}px, 0)`;
+          const speed = parseFloat(layer.getAttribute('data-parallax-speed')) || 0.12;
+          // Center-relative calculation: offset = 0 when section is centered on screen
+          const sectionCenter = rect.top + rect.height / 2;
+          const viewportCenter = windowHeight / 2;
+          const rawOffset = (sectionCenter - viewportCenter) * speed;
+          
+          // Strict clamp: never exceeds 18% of section height (well within the 25% top/bottom bleed)
+          const maxTravel = rect.height * 0.18;
+          const clampedOffset = Math.max(-maxTravel, Math.min(maxTravel, rawOffset));
+          layer.style.transform = `translate3d(0, ${clampedOffset.toFixed(1)}px, 0)`;
         }
       });
 
@@ -394,11 +405,12 @@
    * Setup Event Delegates (Zero Silent Failure)
    */
   function setupEventDelegates() {
-    // Scroll Events
+    // Scroll & Resize Events
     window.addEventListener('scroll', () => {
       handleHeaderScroll();
       handleParallaxScroll();
     }, { passive: true });
+    window.addEventListener('resize', handleParallaxScroll, { passive: true });
 
     // Mobile Menu
     dom.mobileMenuBtn?.addEventListener('click', () => toggleMobileMenu());

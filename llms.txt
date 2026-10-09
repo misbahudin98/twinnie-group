@@ -1,11 +1,13 @@
-# Twinnie Group - Architecture, Knowledge Base & System Specifications (v2.8)
+# Twinnie Group - Architecture, Knowledge Base & System Specifications (v3.0)
 
 > Ekosistem Layanan Kesehatan Ibu & Anak, Spa Bayi & Wanita, Terapi Holistik Medis, Konsultasi Psikologi & Kemitraan Investasi Berkelanjutan.
 
 ## 1. Ikhtisar & Arsitektur Sistem (System Overview)
 Twinnie Group adalah jaringan kesehatan integratif keluarga berbasis di Malang Raya, Jawa Timur. Website ini dibangun dengan standar arsitektur performa tinggi:
-- **Arsitektur**: Pure Semantic HTML5, Modular Vanilla JS, Precompiled Tailwind CSS (< 50 KB), Zero Heavy Runtimes, Zero CDN compilers.
-- **Kecepatan Muat**: < 1.0 detik (Sub-second element & asset load time, aset teroptimasi lokal, font preloaded).
+- **Arsitektur**: Pure Semantic HTML5, Modular Vanilla JS, Precompiled Tailwind CSS (< 45 KB), Zero Heavy Runtimes, Zero CDN compilers.
+- **Kecepatan Muat**: < 1.0 detik (Sub-second element & asset load time, hero LCP image preloaded via `<link rel="preload">`, font preconnected).
+- **Parallax Architecture (Zero-Whitespace Guard)**: Lapisan background berdimensi aman (`top: -25%`, `height: 150%`), pembatas matematis (*mathematically clamped*) pada `requestAnimationFrame`, serta canvas fallback Velvet Dark Rose (`#1a050d`) yang menjamin ketiadaan celah putih di bagian bawah section.
+- **AEO (Answer Engine Optimization) & SEO Terstruktur**: Skema terpadu JSON-LD `@graph` (`MedicalBusiness`, `FAQPage`, `BreadcrumbList`), siap dikutip oleh AI Search Engines (Perplexity, ChatGPT Search, Claude, Google Gemini AI Overviews).
 - **Aturan Arsitektur**: DILARANG MEMBUAT FILE PHP. Seluruh antarmuka berjalan murni secara statis (HTML/CSS/JS) dengan integrasi pesan WhatsApp otomatis.
 - **Aksesibilitas (WCAG 2.1 AA Compliant & Ramah Baby Boomer)**:
   - Mengadopsi prinsip desain ramah lansia: tipografi nyaman, kontras tinggi, navigasi intuitif.

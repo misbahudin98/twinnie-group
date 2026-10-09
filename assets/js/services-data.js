@@ -76,7 +76,7 @@ const MULTIMEDIA_SERVICES = [
       'assets/img/baby-3.jpg',
       'assets/img/baby-4.jpg',
       'assets/img/baby-5.jpg',
-      'assets/img/baby-6.jpg'
+      
     ],
     partnerLogos: [
       { name: 'Twinnie Care', src: 'assets/img/logo-twinnie.jpg' },
@@ -161,7 +161,7 @@ const MULTIMEDIA_SERVICES = [
         priceHomevisit: 0,
         supportsHomevisit: false,
         notes: '*Hanya tersedia langsung di outlet Twinnie Care',
-        img: 'assets/img/baby-6.jpg'
+        img: 'assets/img/baby-5.jpg'
       },
       {
         id: 'cukur-rambut-pkg',
@@ -422,12 +422,12 @@ const MULTIMEDIA_SERVICES = [
     subtitle: 'Program terapi untuk kondisi medis, saraf & otot.',
     caption: 'Pendekatan kolaboratif akupresur & bekam medis steril dengan tenaga kompeten.',
     video: 'assets/videos/bekam.mp4',
-    poster: 'assets/img/Bekam.jpg',
+    poster: 'assets/img/bekam.jpg',
     csNumber: '62895327268977',
     instagram: 'https://www.instagram.com/nimpuna.hc/',
     allowedBranches: ['nimpuna-malang'],
     thumbs: [
-      'assets/img/Bekam.jpg',
+      'assets/img/bekam.jpg',
       'assets/img/tcm.webp',
       'assets/img/tongue.webp'
     ],
@@ -447,7 +447,7 @@ const MULTIMEDIA_SERVICES = [
         priceHomevisit: 120000,
         supportsHomevisit: true,
         notes: '*Biaya transport homevisit Rp 25.000 - Rp 50.000 sesuai jarak',
-        img: 'assets/img/Bekam.jpg'
+        img: 'assets/img/bekam.jpg'
       },
       {
         id: 'terapi-bekam',
@@ -496,7 +496,7 @@ const MULTIMEDIA_SERVICES = [
     title: 'Konsultasi & Terapi bersama Psikolog',
     subtitle: 'Pendampingan kondisi mental ibu pascasalin & keluarga.',
     caption: 'Pendekatan kolaboratif bersama Retno Sri Handayani, M.Pd., M.Psi.',
-    video: 'assets/videos/psikolog.mp4',
+    video: 'assets/videos/psikolog1.mp4',
     poster: 'assets/img/psikolog2.jpg',
     csNumber: '6281333430080',
     instagram: 'https://www.instagram.com/psikolog_retno/',

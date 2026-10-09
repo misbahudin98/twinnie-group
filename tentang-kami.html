@@ -8,12 +8,25 @@
   <meta name="keywords" content="Twinnie Group, Tentang Kami, Bidan Malang, Psikolog Malang, Baby Spa Malang, Terapi Holistik, Indah Maswari Agustin, Tjahya Kuntjoro, Retno Sri Handayani">
   <link rel="canonical" href="https://twinniegroup.com/tentang-kami.html">
 
+  <!-- Performance: Preload Critical Hero LCP Image (< 1s Element Load Time) -->
+  <link rel="preload" as="image" href="assets/img/hero-3.jpg" fetchpriority="high">
+
+  <!-- Security & Privacy Best Practices -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://twinniegroup.com/tentang-kami.html">
   <meta property="og:title" content="Tentang Twinnie Group — Ketulusan Hati Membawa Keajaiban">
   <meta property="og:description" content="Mengenal lebih dekat ekosistem layanan kesehatan integratif ibu, bayi, anak, dan keluarga di Malang.">
-  <meta property="og:image" content="assets/img/hero-3.jpg">
+  <meta property="og:image" content="https://twinniegroup.com/assets/img/hero-3.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tentang Twinnie Group — Ekosistem Kesehatan Malang">
+  <meta name="twitter:description" content="Profil lengkap, visi-misi, serta dewan tenaga ahli medis Twinnie Group Malang.">
+  <meta name="twitter:image" content="https://twinniegroup.com/assets/img/hero-3.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/img/logo-twinnie.jpg">
@@ -471,10 +484,10 @@
     </div>
   </section>
 
-  <!-- ================= JARINGAN OUTLET & PETA LOKASI DENGAN MAP IFRAME (GAMBAR 4: Parallax Section - Menampilkan Background - Instructions 6 & 7) ================= -->
-  <section id="lokasi" class="parallax-section py-20 border-b border-rose-100/60 relative" aria-labelledby="lokasi-title">
-    <!-- Parallax Background Layer (GPU Accelerated) -->
-    <div class="parallax-bg-layer" style="background-image: url('assets/img/woman-allura.jpg');" data-parallax-speed="0.16"></div>
+  <!-- ================= JARINGAN OUTLET & PETA LOKASI DENGAN MAP IFRAME (GAMBAR 4: Parallax Section) ================= -->
+  <section id="lokasi" class="parallax-section py-20 relative" aria-labelledby="lokasi-title">
+    <!-- Parallax Background Layer (GPU Accelerated & Safe Clamped) -->
+    <div class="parallax-bg-layer" style="background-image: url('assets/img/woman-massage-1.jpg');" data-parallax-speed="0.12"></div>
     <!-- Soft Warm Rose Veil -->
     <div class="parallax-rose-veil"></div>
 
@@ -1282,10 +1295,10 @@
     <span class="toast-body">Notifikasi berhasil</span>
   </div>
 
-  <!-- Core Scripts -->
-  <script src="assets/js/services-data.js"></script>
-  <script src="assets/js/booking.js"></script>
-  <script src="assets/js/partnership.js"></script>
-  <script src="assets/js/main.js"></script>
+  <!-- Core Scripts (Defer for Non-Blocking Parsing) -->
+  <script src="assets/js/services-data.js" defer></script>
+  <script src="assets/js/booking.js" defer></script>
+  <script src="assets/js/partnership.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -29,36 +29,51 @@
   }
 }
 
-/* Hero Parallax Background (GPU Accelerated) */
+/* Hero Parallax Background (GPU Accelerated & HD Crisp) */
 #hero-bg {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  right: 0;
+  height: 140%;
+  width: 100%;
   background-image: url('../img/hero-3.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   will-change: transform;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
-/* Parallax Alternating Section Architecture (Instructions 5, 6, 7) */
+/* Parallax Alternating Section Architecture - Zero Whitespace (Instructions 1 & 2) */
 .parallax-section {
   position: relative;
   overflow: hidden;
-  isolation: isolate; /* CRITICAL: Creates an isolated local stacking context so children never hide behind body */
-  z-index: 1; /* Sits above body canvas, but below curtain-solid-section (z-index 20) */
+  isolation: isolate; /* CRITICAL: Creates an isolated local stacking context */
+  z-index: 1;
+  background-color: #1a050d; /* Velvet dark rose fallback: Prevents ANY white canvas flash or bottom gap */
 }
 
 .parallax-bg-layer {
   position: absolute;
-  top: -15%;
+  top: -25%;
   left: 0;
   right: 0;
-  height: 130%;
+  height: 150%;
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   will-change: transform;
   pointer-events: none;
-  z-index: 1; /* Rendered crisp and visible inside the section */
+  z-index: 1;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* Rose Image Overlay Layer (Best Practice Maternal Rose Gradient & Opacity - Instruction 6) */
@@ -115,12 +130,17 @@
   border-top: 1px solid rgba(244, 63, 94, 0.25) !important;
 }
 
-/* Soft Downward Fade for seamless transition into solid content (ref.php Best Practice) */
+/* Soft Downward Fade for seamless transition into solid content (Subtle & Natural) */
 .hero-readability {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.18) 0%, rgba(15, 23, 42, 0.00) 40%, rgba(255, 253, 249, 0.35) 85%, rgba(255, 253, 249, 0.95) 100%);
+  background: linear-gradient(to bottom, 
+    rgba(15, 23, 42, 0.20) 0%, 
+    rgba(15, 23, 42, 0.00) 45%, 
+    rgba(255, 253, 249, 0.12) 80%, 
+    rgba(255, 253, 249, 0.38) 100%
+  );
   z-index: 3;
 }
 
@@ -285,9 +305,15 @@
   object-fit: cover;
 }
 
-/* Smooth hide for lazyload */
+/* Smooth hide for lazyload & HD Pixel Clarity */
 img[loading="lazy"] {
   transition: opacity 0.3s ease-in;
+}
+
+img,
+.img-hd {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
 }
 
 /* Reduced motion preference */
