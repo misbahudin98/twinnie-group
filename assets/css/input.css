@@ -43,7 +43,7 @@
   background-repeat: no-repeat;
   will-change: transform;
   image-rendering: -webkit-optimize-contrast;
-  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
@@ -71,7 +71,7 @@
   pointer-events: none;
   z-index: 1;
   image-rendering: -webkit-optimize-contrast;
-  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
@@ -313,7 +313,6 @@ img[loading="lazy"] {
 img,
 .img-hd {
   image-rendering: -webkit-optimize-contrast;
-  image-rendering: auto;
 }
 
 /* Reduced motion preference */
