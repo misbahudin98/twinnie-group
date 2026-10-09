@@ -61,7 +61,7 @@ Setiap mitra ditampilkan di footer seluruh halaman dengan logo circular dan labe
 6. **UK Family Care** (`assets/img/logo-uk-family-care.png`) — Perawatan Keluarga & Praktik Pratama
 7. **SMK Taruna Bhakti (STABHA)** (`assets/img/logo-stabha.png`) — Kerjasama Edukasi & Vokasi Terapis
 8. **Mufi Journey** (`assets/img/logo-mufi.png`) — Wellness Partner & Komunitas Parenting
-9. **Universitas Kepanjen** (`assets/img/logo_univ_kepanjen.png`) — Afiliasi Riset & Standar Mutu Akademik
+9. **Universitas Kepanjen** (`assets/img/logo_univ_kepanjen.webp`) — Afiliasi Riset & Standar Mutu Akademik
 
 ---
 

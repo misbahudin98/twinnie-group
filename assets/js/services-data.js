@@ -24,7 +24,7 @@ const TWINNIE_PARTNERS = [
   { name: 'UK Family Care', logo: 'assets/img/logo-uk-family-care.png', url: 'https://maps.app.goo.gl/jLzjpVshDXAX8FUz9' },
   { name: 'SMK Taruna Bhakti', logo: 'assets/img/logo-stabha.png', url: 'https://maps.app.goo.gl/MinJcdb7MsSPSSNh9' },
   { name: 'Mufi Journey', logo: 'assets/img/logo-mufi.png', url: '' },
-  { name: 'Universitas Kepanjen', logo: 'assets/img/logo_univ_kepanjen.png', url: '' }
+  { name: 'Universitas Kepanjen', logo: 'assets/img/logo_univ_kepanjen.webp', url: '' }
 ];
 
 const OUTLETS = [
@@ -81,7 +81,7 @@ const MULTIMEDIA_SERVICES = [
     partnerLogos: [
       { name: 'Twinnie Care', src: 'assets/img/logo-twinnie.jpg' },
       { name: 'Rumah Ameera', src: 'assets/img/logo-rumah-ameera.jpg' },
-      { name: 'Univ Kepanjen', src: 'assets/img/logo_univ_kepanjen.png' }
+      { name: 'Univ Kepanjen', src: 'assets/img/logo_univ_kepanjen.webp' }
     ],
     packages: [
       {
