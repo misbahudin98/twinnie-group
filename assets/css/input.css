@@ -39,8 +39,9 @@
   width: 100%;
   background-image: url('../img/hero-3.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 35%;
   background-repeat: no-repeat;
+  filter: contrast(1.04) saturate(1.05);
   will-change: transform;
   image-rendering: -webkit-optimize-contrast;
   -webkit-backface-visibility: hidden;
@@ -54,7 +55,7 @@
   overflow: hidden;
   isolation: isolate; /* CRITICAL: Creates an isolated local stacking context */
   z-index: 1;
-  background-color: #1a050d; /* Velvet dark rose fallback: Prevents ANY white canvas flash or bottom gap */
+  background-color: #0f172a; /* Deep charcoal neutral fallback */
 }
 
 .parallax-bg-layer {
@@ -67,6 +68,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: contrast(1.03) saturate(1.05);
   will-change: transform;
   pointer-events: none;
   z-index: 1;
@@ -76,13 +78,14 @@
   transform: translateZ(0);
 }
 
-/* Rose Image Overlay Layer (Best Practice Maternal Rose Gradient & Opacity - Instruction 6) */
+/* High-Clarity Directional Scrim: Text on left remains 100% readable, photo shines bright & naturally */
 .accent-overlay,
 .hero-pink-glass-layer {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(225, 29, 72, 0.88) 0%, rgba(236, 72, 153, 0.84) 50%, rgba(244, 63, 94, 0.82) 100%);
-  mix-blend-mode: multiply;
+  background: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.65) 0%, rgba(15, 23, 42, 0.35) 45%, rgba(15, 23, 42, 0.08) 75%, transparent 100%),
+    radial-gradient(ellipse 65% 45% at 15% 20%, rgba(244, 63, 94, 0.18) 0%, transparent 60%);
   z-index: 2; /* Sits directly over the photo layer */
   pointer-events: none;
 }
@@ -90,8 +93,9 @@
 @media (min-width: 1024px) {
   .accent-overlay,
   .hero-pink-glass-layer {
-    background: linear-gradient(135deg, rgba(225, 29, 72, 0.86) 0%, rgba(236, 72, 153, 0.83) 50%, rgba(244, 63, 94, 0.80) 100%);
-    mix-blend-mode: multiply;
+    background: 
+      linear-gradient(to right, rgba(15, 23, 42, 0.58) 0%, rgba(15, 23, 42, 0.25) 45%, transparent 85%),
+      radial-gradient(ellipse 65% 45% at 15% 20%, rgba(244, 63, 94, 0.14) 0%, transparent 60%);
   }
 }
 
@@ -99,16 +103,16 @@
 .parallax-glass-veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 241, 244, 0.90) 0%, rgba(254, 226, 235, 0.85) 50%, rgba(255, 241, 244, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(255, 241, 244, 0.70) 0%, rgba(254, 226, 235, 0.55) 50%, rgba(255, 241, 244, 0.75) 100%);
   z-index: 2;
   pointer-events: none;
 }
 
+/* Neutral High-Clarity Scrim for Clinical Credibility (Bekam & Spa photos stay authentic) */
 .parallax-rose-veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(225, 29, 72, 0.88) 0%, rgba(236, 72, 153, 0.84) 50%, rgba(244, 63, 94, 0.82) 100%);
-  mix-blend-mode: multiply;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.38) 50%, rgba(15, 23, 42, 0.60) 100%);
   z-index: 2;
   pointer-events: none;
 }

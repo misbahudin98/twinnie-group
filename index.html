@@ -245,18 +245,28 @@
     <div class="w-full max-w-6xl mx-auto p-5 sm:p-8 lg:py-16 relative z-10">
       <div class="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
         
-        <!-- LEFT: Unboxed Airy Floating Typography & Controls (from ref.php) -->
+        <!-- LEFT: Bento Hero Typography, Telemetry & Interactive Service Card -->
         <div class="flex-1 text-center lg:text-left space-y-4">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white font-semibold text-xs border border-white/30 shadow-xs">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Ekosistem Kesehatan Ibu, Anak &amp; Terapi Holistik Malang</span>
+          
+          <!-- Live Telemetry Badges (Web3 Real-time Status Inspired) -->
+          <div id="hero-badge-wrap" class="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md text-emerald-100 font-semibold text-xs border border-emerald-400/35 shadow-xs">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              </span>
+              <span>3 Bidan Siap Home Visit Hari Ini (Malang &amp; Batu)</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white/95 text-xs font-medium border border-white/20">
+              🏥 STR Bidan Kemenkes RI Terverifikasi
+            </span>
           </div>
 
           <h1 id="hero-title" class="text-white text-3xl sm:text-4xl lg:text-5xl font-heading font-black tracking-tight leading-[1.15] hero-text-shadow">
             “Ketulusan Hati <span class="text-rose-200">Membawa Keajaiban</span>”
           </h1>
 
-          <p class="text-white/95 text-xs sm:text-sm md:text-base font-normal leading-relaxed max-w-xl hero-text-shadow">
+          <p id="hero-desc" class="text-white/95 text-xs sm:text-sm md:text-base font-normal leading-relaxed max-w-xl hero-text-shadow">
             Perawatan medis &amp; relaksasi komprehensif bersertifikasi resmi di Malang Raya. Ditangani langsung oleh bidan profesional, fisioterapis, dan psikolog berpengalaman dengan standar higienis tertinggi.
           </p>
 
@@ -283,14 +293,22 @@
             </button>
           </div>
 
-          <!-- Dynamic Active Service Meta (Editorial Pill) -->
-          <div class="pt-1 space-y-2">
-            <div>
-              <h2 id="serviceTitle" class="text-xl sm:text-2xl font-heading font-extrabold text-white hero-text-shadow leading-snug">Baby Spa &amp; Newborn Care</h2>
-              <p id="serviceSubtitle" class="text-xs sm:text-sm font-semibold text-rose-100 mt-0.5 hero-text-shadow">Perawatan lembut untuk bayi baru lahir &amp; anak.</p>
-            </div>
-            <div>
-              <p id="serviceCaption" class="text-xs sm:text-sm text-slate-800 bg-white/95 backdrop-blur-md inline-block px-3.5 py-2 rounded-xl shadow-md border border-white/60 font-medium leading-relaxed">Perawatan personal, aman, dan penuh empati bersama Bidan Indah Maswari Agustin.</p>
+          <!-- Dynamic Active Service Meta (Bento Card Container) -->
+          <div class="pt-1" id="heroActivePillarWrap">
+            <div id="heroActivePillarCard" class="p-3.5 sm:p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/70 shadow-xl text-slate-800 transition-all text-left">
+              <div class="flex items-center justify-between gap-2 mb-1.5">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-rose-100 text-rose-700">
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  Layanan Unggulan
+                </span>
+                <span class="text-[11px] font-semibold text-slate-500 flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Bidan &amp; Medis Bersertifikat
+                </span>
+              </div>
+              <h2 id="serviceTitle" class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900 leading-snug">Baby Spa &amp; Newborn Care</h2>
+              <p id="serviceSubtitle" class="text-xs sm:text-sm font-semibold text-rose-600 mt-0.5">Perawatan lembut untuk bayi baru lahir &amp; anak.</p>
+              <p id="serviceCaption" class="text-xs text-slate-600 mt-1.5 leading-relaxed">Perawatan personal, aman, dan penuh empati bersama Bidan Indah Maswari Agustin, Amd.Keb.</p>
             </div>
           </div>
 
@@ -1634,6 +1652,9 @@
   <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden transition-all duration-300 opacity-0 translate-y-4 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-semibold pointer-events-none" role="alert">
     <span class="toast-body">Notifikasi berhasil</span>
   </div>
+
+  <!-- GSAP Animation Platform (High-Performance Spring Physics & Transitions) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 
   <!-- Core Scripts (Zero External Heavy Libraries, Defer for Non-Blocking Parsing) -->
   <script src="assets/js/services-data.js" defer></script>

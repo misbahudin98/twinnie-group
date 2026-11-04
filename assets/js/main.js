@@ -331,6 +331,18 @@
     renderLogosStrip(svc.partnerLogos || []);
     updateDots(currentServiceIndex);
 
+    // Smooth Transition Animation via GSAP
+    if (typeof window.gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.gsap.fromTo('#heroActivePillarCard', 
+        { opacity: 0.5, y: 8 }, 
+        { opacity: 1, y: 0, duration: 0.28, ease: 'power2.out' }
+      );
+      window.gsap.fromTo('#heroMediaViewport', 
+        { opacity: 0.8, scale: 0.985 }, 
+        { opacity: 1, scale: 1, duration: 0.32, ease: 'power2.out' }
+      );
+    }
+
     // Update Hero Category Pills with elegant translucent pill aesthetic
     const heroPills = document.querySelectorAll('[data-hero-service]');
     heroPills.forEach((btn) => {
@@ -586,6 +598,42 @@
   }
 
   /**
+   * GSAP Hero Entrance & Micro-Interactions (Snappy Physics Emil Kowalski Standard)
+   */
+  let gsapInitialized = false;
+  function initGSAPHeroAnimations() {
+    if (gsapInitialized || typeof window.gsap === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    gsapInitialized = true;
+
+    const gsap = window.gsap;
+    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+    tl.from('#hero-badge-wrap', { y: -10, opacity: 0, duration: 0.4 })
+      .from('#hero-title', { y: 16, opacity: 0, duration: 0.45 }, '-=0.25')
+      .from('#hero-desc', { y: 12, opacity: 0, duration: 0.4 }, '-=0.3')
+      .from('#heroServicePills', { y: 10, opacity: 0, duration: 0.35 }, '-=0.25')
+      .from('#heroActivePillarCard', { y: 14, opacity: 0, duration: 0.4 }, '-=0.2')
+      .from('#heroMediaCard', { y: 22, opacity: 0, duration: 0.5 }, '-=0.35');
+  }
+
+  function initButtonPhysics() {
+    const actionBtns = document.querySelectorAll('[data-open-booking], .hero-svc-btn');
+    actionBtns.forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        if (typeof window.gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          window.gsap.to(btn, { scale: 1.03, duration: 0.16, ease: 'power1.out' });
+        }
+      });
+      btn.addEventListener('mouseleave', () => {
+        if (typeof window.gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          window.gsap.to(btn, { scale: 1, duration: 0.16, ease: 'power1.out' });
+        }
+      });
+    });
+  }
+
+  /**
    * Bootstrap
    */
   function init() {
@@ -596,7 +644,14 @@
     setupFloatingCTAs();
     handleHeaderScroll();
     initNavbarScrollSpy();
+    initGSAPHeroAnimations();
+    initButtonPhysics();
   }
+
+  window.addEventListener('load', () => {
+    initGSAPHeroAnimations();
+    initButtonPhysics();
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
