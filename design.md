@@ -409,3 +409,28 @@ Untuk menjamin alur pandang mata yang tenang, mewah, dan bebas disonansi visual 
    - Menghilangkan warna dingin (`bg-white` tajam atau `bg-slate-50` kebiruan) yang memecah kehangatan maternal.
 3. **Komponen Footer (WARNA GELAP MEWAH)**:
    - Menggunakan Warm Luxury Obsidian (`.footer-warm-dark`, `#0e0912`) dengan Ambient Rose Halo di bagian atas, menghadirkan transisi alami dari section warm ivory di atasnya.
+
+---
+
+## 14. Purifikasi AI Slop, Normalisasi Tipografi Lansia & Standar Viewport (v3.0 Refinement)
+
+### A. Purifikasi Desain & Copywriting Khas AI (Eliminasi AI Slop)
+1. **Eliminasi Web3/Crypto Telemetry Tropes**:
+   - Menghapus penggunaan animasi radar ping hijau agresif (`animate-ping bg-emerald-400`) bergaya Web3 status monitor di sektor pelayanan kesehatan maternal.
+   - Menggantikannya dengan indikator kesiapan jadwal bidan yang tenang, terpercaya, dan berwibawa: status kesiapan Home Visit Malang & Batu dipadukan lencana verifikasi STR Bidan Kemenkes RI.
+2. **Harmonisasi Slogan Emosional & Proposisi Nilai Nyata (StoryBrand Grunt Test)**:
+   - Menjaga kredo orisinal *“Ketulusan Hati Membawa Keajaiban”* sebagai kicker emosional di atas judul utama.
+   - Menyelaraskan H1 utama menjadi **“Layanan Bidan & Terapi Medis Keluarga ke Rumah Anda”** agar dalam 5 detik pertama pengunjung langsung memahami esensi layanan, wilayah jangkauan, dan tindakan yang harus diambil.
+
+### B. Normalisasi Tipografi Ramah Lansia (Baby Boomer Accessibility WCAG AAA)
+1. **Eliminasi Teks Mikro (Anti Micro-Text Trap)**:
+   - Menghapus seluruh kelas ukuran font $10\text{px}$ dan $11\text{px}$ (`text-[10px]`, `text-[11px]`) pada badge layanan, thumbnail counter, live status, dan keterangan outlet.
+   - Menormalkan ukuran teks menjadi $\ge 12\text{px}$ (`text-xs`) dan $14\text{px}$ (`text-sm`) dengan ketebalan medium/semibold dan kontras rasio $> 7:1$, menjamin keterbacaan tinggi bagi ibu menyusui yang lelah maupun kakek-nenek (*baby boomers*).
+
+### C. Mandat Arsitektur Viewport "Adaptive Scrolly-Pacing" (Anti 100vh Trap)
+1. **Jebakan Viewport Kaku 100vh**:
+   - Dilarang memaksakan seluruh section konten (`#layanan`, `#testimonials`, `#lokasi`) menjadi $100\text{vh}$ / $100\text{dvh}$ atau CSS `scroll-snap mandatory`. Hal ini terbukti memicu *inner scrollbar* (scroll di dalam scroll) dan pemotongan konten pada layar ponsel pintar.
+2. **Formula Pacing Adaptif**:
+   - **Hero Section**: Menggunakan `min-h-[85vh]` s/d `min-h-[88vh]` dengan *peek affordance* (tepi section berikutnya mengintip halus di lipatan bawah sebagai petunjuk visual bahwa halaman dapat digulir).
+   - **Content Sections**: Mengalir secara natural (*natural vertical flow*) dengan padding terukur `py-16` s/d `py-20` dan batas kontainer `max-w-6xl mx-auto`.
+   - **Modal Reservasi**: Tetap mempertahankan arsitektur cohesive single-view $94\text{vh}$ (desktop 3-kolom) dan 2-section mobile tanpa scroll panjang.
