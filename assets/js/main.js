@@ -617,6 +617,188 @@
       .from('#heroMediaCard', { y: 22, opacity: 0, duration: 0.5 }, '-=0.35');
   }
 
+  /**
+   * Interactive Animated Counters (Social Proof on Scroll)
+   */
+  function initAnimatedCounters() {
+    const counterEls = document.querySelectorAll('.counter-value');
+    if (!counterEls.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        obs.unobserve(entry.target);
+
+        const target = parseFloat(entry.target.getAttribute('data-target')) || 0;
+        const isDecimal = entry.target.getAttribute('data-decimal') === '1';
+        const duration = 1200; // 1.2 detik
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic formula
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const currentVal = target * easeOut;
+
+          if (isDecimal) {
+            entry.target.innerText = currentVal.toFixed(1);
+          } else {
+            entry.target.innerText = Math.floor(currentVal).toLocaleString('id-ID');
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            if (isDecimal) {
+              entry.target.innerText = target.toFixed(1);
+            } else {
+              entry.target.innerText = target.toLocaleString('id-ID');
+            }
+          }
+        }
+
+        requestAnimationFrame(updateCounter);
+      });
+    }, { threshold: 0.4 });
+
+    counterEls.forEach(el => observer.observe(el));
+  }
+
+  /**
+   * Interactive Category Tabs (Service Switcher like Sabilillah Unit Switcher)
+   */
+  function initCategoryTabs() {
+    const tabBtns = document.querySelectorAll('.category-tab-btn');
+    const cards = document.querySelectorAll('.service-pillar-card');
+    if (!tabBtns.length || !cards.length) return;
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter') || 'all';
+
+        // Update active button state
+        tabBtns.forEach(b => {
+          const isActive = b === btn;
+          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          if (isActive) {
+            b.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200/80', 'shadow-2xs');
+            b.classList.add('active', 'bg-pink-500', 'text-white', 'shadow-md', 'shadow-pink-500/25');
+          } else {
+            b.classList.remove('active', 'bg-pink-500', 'text-white', 'shadow-md', 'shadow-pink-500/25');
+            b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200/80', 'shadow-2xs');
+          }
+        });
+
+        // Filter and animate cards
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          const shouldShow = filter === 'all' || cat === filter;
+
+          if (shouldShow) {
+            card.style.display = 'flex';
+            if (typeof window.gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+              window.gsap.fromTo(card, 
+                { opacity: 0, scale: 0.95, y: 15 }, 
+                { opacity: 1, scale: 1, y: 0, duration: 0.35, ease: 'power2.out' }
+              );
+            } else {
+              card.style.opacity = '1';
+              card.style.transform = 'none';
+            }
+          } else {
+            if (typeof window.gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+              window.gsap.to(card, {
+                opacity: 0,
+                scale: 0.95,
+                duration: 0.2,
+                ease: 'power2.in',
+                onComplete: () => {
+                  card.style.display = 'none';
+                }
+              });
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  }
+
+  /**
+   * Scroll-Driven Staggered Entrance Animations (GSAP ScrollTrigger)
+   */
+  function initScrollAnimations() {
+    if (typeof window.gsap === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const gsap = window.gsap;
+
+    if (typeof window.ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(window.ScrollTrigger);
+
+      // Metrics Strip Entrance
+      if (document.getElementById('metrics')) {
+        gsap.from('#metrics', {
+          scrollTrigger: {
+            trigger: '#metrics',
+            start: 'top 90%'
+          },
+          y: 25,
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power2.out'
+        });
+      }
+
+      // Layanan Heading & Tabs
+      if (document.getElementById('layanan-title')) {
+        gsap.from('#layanan-title, #serviceCategoryTabs', {
+          scrollTrigger: {
+            trigger: '#layanan',
+            start: 'top 85%'
+          },
+          y: 20,
+          opacity: 0,
+          duration: 0.45,
+          stagger: 0.1,
+          ease: 'power2.out'
+        });
+      }
+
+      // Layanan Cards Staggered
+      const pillarCards = document.querySelectorAll('.service-pillar-card');
+      if (pillarCards.length) {
+        gsap.from(pillarCards, {
+          scrollTrigger: {
+            trigger: '#servicePillarsGrid',
+            start: 'top 82%'
+          },
+          y: 35,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: 'power2.out'
+        });
+      }
+
+      // Dewan Tenaga Ahli Cards
+      const expertCards = document.querySelectorAll('section:has(#layanan) ~ section .grid-cols-1.sm\\:grid-cols-3 > div, section.curtain-solid-section .grid-cols-1.sm\\:grid-cols-3 > div');
+      if (expertCards.length) {
+        gsap.from(expertCards, {
+          scrollTrigger: {
+            trigger: expertCards[0].parentElement,
+            start: 'top 85%'
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.45,
+          stagger: 0.12,
+          ease: 'power2.out'
+        });
+      }
+    }
+  }
+
   function initButtonPhysics() {
     const actionBtns = document.querySelectorAll('[data-open-booking], .hero-svc-btn');
     actionBtns.forEach(btn => {
@@ -645,11 +827,17 @@
     handleHeaderScroll();
     initNavbarScrollSpy();
     initGSAPHeroAnimations();
+    initAnimatedCounters();
+    initCategoryTabs();
+    initScrollAnimations();
     initButtonPhysics();
   }
 
   window.addEventListener('load', () => {
     initGSAPHeroAnimations();
+    initAnimatedCounters();
+    initCategoryTabs();
+    initScrollAnimations();
     initButtonPhysics();
   });
 

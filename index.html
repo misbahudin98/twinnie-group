@@ -405,6 +405,49 @@
     </div>
   </section>
 
+  <!-- ================= METRICS & SOCIAL PROOF STRIP (Interactive Animated Counters) ================= -->
+  <section id="metrics" class="relative z-20 -mt-10 sm:-mt-12 max-w-5xl mx-auto px-4 sm:px-6" aria-label="Statistik Layanan">
+    <div class="bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/80 shadow-xl shadow-slate-900/5 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+      
+      <div class="p-2 flex flex-col items-center justify-center">
+        <div class="flex items-baseline justify-center gap-0.5">
+          <span class="font-heading font-black text-3xl sm:text-4xl text-slate-900 counter-value" data-target="10000">0</span>
+          <span class="font-heading font-extrabold text-xl sm:text-2xl text-pink-600">+</span>
+        </div>
+        <p class="text-xs sm:text-sm font-semibold text-slate-700 mt-1">Keluarga Terlayani</p>
+        <span class="text-[11px] text-slate-500 mt-0.5">Malang Raya &amp; Sekitarnya</span>
+      </div>
+
+      <div class="p-2 pt-4 sm:pt-2 flex flex-col items-center justify-center">
+        <div class="flex items-baseline justify-center gap-0.5">
+          <span class="font-heading font-black text-3xl sm:text-4xl text-slate-900 counter-value" data-target="4.9" data-decimal="1">0</span>
+          <span class="font-heading font-extrabold text-xl sm:text-2xl text-amber-500">★</span>
+        </div>
+        <p class="text-xs sm:text-sm font-semibold text-slate-700 mt-1">Rating Kepuasan</p>
+        <span class="text-[11px] text-slate-500 mt-0.5">Berdasarkan 1.200+ Ulasan</span>
+      </div>
+
+      <div class="p-2 pt-4 sm:pt-2 flex flex-col items-center justify-center">
+        <div class="flex items-baseline justify-center gap-0.5">
+          <span class="font-heading font-black text-3xl sm:text-4xl text-slate-900 counter-value" data-target="100">0</span>
+          <span class="font-heading font-extrabold text-xl sm:text-2xl text-emerald-600">%</span>
+        </div>
+        <p class="text-xs sm:text-sm font-semibold text-slate-700 mt-1">Tenaga Medis Berlisensi</p>
+        <span class="text-[11px] text-slate-500 mt-0.5">Bidan &amp; Fisioterapis STR</span>
+      </div>
+
+      <div class="p-2 pt-4 sm:pt-2 flex flex-col items-center justify-center">
+        <div class="flex items-baseline justify-center gap-0.5">
+          <span class="font-heading font-black text-3xl sm:text-4xl text-slate-900 counter-value" data-target="3">0</span>
+          <span class="font-heading font-extrabold text-xl sm:text-2xl text-rose-500">Cabang</span>
+        </div>
+        <p class="text-xs sm:text-sm font-semibold text-slate-700 mt-1">Jaringan Malang Raya</p>
+        <span class="text-[11px] text-slate-500 mt-0.5">Outlet &amp; Layanan Home Visit</span>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ================= LAYANAN UTAMA (WARNA 1: Curtain Solid Section - Menyembunyikan Background - Instruction 7) ================= -->
   <section id="layanan" class="curtain-solid-section py-20 bg-[#FFFDF9] border-y border-stone-200/70 relative z-10" aria-labelledby="layanan-title">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -441,11 +484,30 @@
         </button>
       </div>
 
+      <!-- Interactive Category Switcher (Sabilillah-grade responsive tab switcher) -->
+      <div class="mb-10 flex flex-wrap items-center justify-center gap-2" id="serviceCategoryTabs" role="tablist" aria-label="Filter Kategori Layanan">
+        <button type="button" data-filter="all" class="category-tab-btn active px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 bg-pink-500 text-white shadow-md shadow-pink-500/25 active:scale-95" role="tab" aria-selected="true">
+          ✨ Semua Layanan
+        </button>
+        <button type="button" data-filter="baby" class="category-tab-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-pink-600 border border-slate-200/80 shadow-2xs active:scale-95" role="tab" aria-selected="false">
+          👶 Ibu &amp; Bayi (Twinnie Care)
+        </button>
+        <button type="button" data-filter="woman" class="category-tab-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-pink-600 border border-slate-200/80 shadow-2xs active:scale-95" role="tab" aria-selected="false">
+          💆‍♀️ Allura Woman Spa
+        </button>
+        <button type="button" data-filter="holistic" class="category-tab-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-pink-600 border border-slate-200/80 shadow-2xs active:scale-95" role="tab" aria-selected="false">
+          🌿 Terapi Medik &amp; Bekam
+        </button>
+        <button type="button" data-filter="psikologi" class="category-tab-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-pink-600 border border-slate-200/80 shadow-2xs active:scale-95" role="tab" aria-selected="false">
+          🧠 Konseling Psikologi
+        </button>
+      </div>
+
       <!-- 4 Core Pillars Grid (Clean, Focused, Not Bloated) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div id="servicePillarsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Pillar 1: Baby & Kids -->
-        <div class="bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+        <div class="service-pillar-card bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-2xl hover:border-pink-300/80 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group" data-category="baby">
           <div>
             <div class="rounded-2xl overflow-hidden aspect-4/3 mb-4 bg-slate-100 relative">
               <img src="assets/img/baby.jpg" alt="Twinnie Care Ibu dan Bayi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" decoding="async">
@@ -466,7 +528,7 @@
         </div>
 
         <!-- Pillar 2: Allura Woman Spa -->
-        <div class="bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+        <div class="service-pillar-card bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-2xl hover:border-pink-300/80 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group" data-category="woman">
           <div>
             <div class="rounded-2xl overflow-hidden aspect-4/3 mb-4 bg-slate-100 relative">
               <img src="assets/img/woman-hair.jpg" alt="Allura Woman Spa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" decoding="async">
@@ -489,7 +551,7 @@
         </div>
 
         <!-- Pillar 3: Terapi Holistik Nimpuna -->
-        <div class="bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+        <div class="service-pillar-card bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-2xl hover:border-emerald-300/80 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group" data-category="holistic">
           <div>
             <div class="rounded-2xl overflow-hidden aspect-4/3 mb-4 bg-slate-100 relative">
               <img src="assets/img/bekam.jpg" alt="Terapi Holistik Nimpuna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" decoding="async">
@@ -510,7 +572,7 @@
         </div>
 
         <!-- Pillar 4: Psikolog Rumah Ameera -->
-        <div class="bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+        <div class="service-pillar-card bg-[#FFFDF9] rounded-3xl p-5 border border-slate-200/90 shadow-2xs hover:shadow-2xl hover:border-indigo-300/80 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group" data-category="psikologi">
           <div>
             <div class="rounded-2xl overflow-hidden aspect-4/3 mb-4 bg-slate-100 relative">
               <img src="assets/img/psikolog.jpg" alt="Konsultasi Psikologi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" decoding="async">
@@ -1656,8 +1718,9 @@
     <span class="toast-body">Notifikasi berhasil</span>
   </div>
 
-  <!-- GSAP Animation Platform (High-Performance Spring Physics & Transitions) -->
+  <!-- GSAP Animation Platform & ScrollTrigger (High-Performance Spring Physics & Transitions) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
   <!-- Core Scripts (Zero External Heavy Libraries, Defer for Non-Blocking Parsing) -->
   <script src="assets/js/services-data.js" defer></script>
