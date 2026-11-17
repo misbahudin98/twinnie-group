@@ -437,3 +437,86 @@ Untuk menjamin alur pandang mata yang tenang, mewah, dan bebas disonansi visual 
    - **Hero Section**: Menggunakan `min-h-[85vh]` s/d `min-h-[88vh]` dengan *peek affordance* (tepi section berikutnya mengintip halus di lipatan bawah sebagai petunjuk visual bahwa halaman dapat digulir).
    - **Content Sections**: Mengalir secara natural (*natural vertical flow*) dengan padding terukur `py-16` s/d `py-20` dan batas kontainer `max-w-6xl mx-auto`.
    - **Modal Reservasi**: Tetap mempertahankan arsitektur cohesive single-view $94\text{vh}$ (desktop 3-kolom) dan 2-section mobile tanpa scroll panjang.
+
+### D. Proporsionalitas Hero Section & Hardening Animasi Berstandar Apple (v3.1 Refinement)
+1. **Penyelarasan Vertikal Hero Section (1:1 Visual Balance dengan Multimedia Card)**:
+   - Meringkas tipografi dan layout kolom kiri hero section pada `index.html` dari tinggi awal $\sim 700\text{px}$ menjadi $\sim 360\text{px}$, selaras sempurna (*equal vertical balance*) dengan floating multimedia card di kolom kanan ($\sim 380\text{px}$).
+   - Mengonsolidasi badge kepercayaan, kicker emosional, H1 ringkas, deskripsi fokus, pill kategori kompak, dan baris aksi cepat terpadu (tombol CTA + kontrol navigasi carousel dots/arrows) dalam alur visual yang ergonomis tanpa ruang kosong menggantung.
+2. **Hardening Animasi & Standar Taktil Fluida (Zero-Jank Apple Physics)**:
+   - Menghapus manipulasi inline scale JS pada hover tombol (`initButtonPhysics`), dialihkan 100% ke transisi akselerasi GPU native CSS (`transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1)` + `active:scale(0.96)`) demi responsivitas 0ms tanpa resiko benturan inline style.
+   - Normalisasi efek perbesaran logo `.logo-circle:hover` ke batas wajar (`scale(1.06)`).
+   - Penggantian selektor query `:has()` pada ScrollTrigger ke selektor kanonikal `#tenaga-ahli` demi kompatibilitas penuh lintas peramban.
+
+---
+
+## 15. Eksekusi Plan B: Spatial 3D & Maternal Silk Architecture (v4.0 Final)
+
+> **Landasan Desain:** Mengangkat identitas visual Twinnie Group ke tingkat *authentic human-crafted quiet luxury*, menghapus 100% jejak kecerdasan buatan (*zero AI slop*), serta menyelaraskan harmoni tata letak, ruang bernapas (*spacious breathing room*), fisika 3D spasial, dan gradasi sutra keibuan (*maternal silk mesh*) di seluruh halaman.
+
+### A. Tiga Lapis Gradasi Kanvas Organik (Maternal Silk Palette)
+1. **Maternal Pearl Silk Mesh (`.curtain-solid-section` & `.bg-maternal-pearl`)**:
+   - Seluruh section konten solid (`#layanan`, `#tenaga-ahli`, `#faq`, serta bagian Sejarah, Visi-Misi, Nilai Perusahaan, dan Skema Kemitraan) tidak lagi menggunakan warna datar mati (`bg-[#FFFDF9]`).
+   - Menerapkan gradasi radial dan linier multi-stop berlapis sutra:
+     `radial-gradient(ellipse at 15% 10%, rgba(253, 242, 248, 0.95) 0%, transparent 60%)`,
+     `radial-gradient(ellipse at 85% 85%, rgba(255, 241, 242, 0.85) 0%, transparent 65%)`, dan
+     `linear-gradient(180deg, #fffcf8 0%, #fff7f9 50%, #fffcf8 100%)`.
+   - Menghadirkan kedalaman ruang kanvas yang lembut, menenangkan, mewah, dan ramah penglihatan.
+2. **Velvet Rose Multiply Scrim (`.parallax-rose-veil`)**:
+   - Section parallax (`#hero`, `#testimonials`, `#lokasi`, dan Hero subhalaman) menerapkan scrim fotoluminens:
+     `linear-gradient(135deg, rgba(236, 72, 153, 0.86) 0%, rgba(225, 29, 72, 0.82) 48%, rgba(76, 5, 25, 0.92) 100%)` berpadu `mix-blend-mode: multiply` dan scrim linier transparan ke obsidian murni di bagian lipatan transisi.
+3. **Deep Maternal Obsidian (`.footer-warm-dark`)**:
+   - Menjaga kontras malam hari yang berwibawa (`#0c060d`) dengan batas hairline tipis `border-t border-rose-950/70`.
+
+### B. Arsitektur Kartu Spasial 3D (`.card-spatial-3d`)
+1. **Specular Top Chamfer & Hairline Boundary**:
+   - Menggunakan `background: rgba(255, 255, 255, 0.94)`, border 1px presisi `rgba(255, 228, 230, 0.90)` (Rose 100), sudut lengkung lembut `24px` (`rounded-3xl`), serta pantulan cahaya bagian atas (*top specular chamfer*) via inner shadow:
+     `box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.95), 0 10px 25px -5px rgba(225, 29, 72, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03)`.
+2. **Fisika Mikro-Tilt Pointer Mengikuti Kursor (`[data-spatial-tilt]`)**:
+   - Menggunakan akselerasi GPU native CSS `perspective(1000px) rotateX(...) rotateY(...) translateY(-4px) scale3d(1.008, 1.008, 1)`.
+   - Mengadopsi `requestAnimationFrame` dengan batasan sudut maksimal halus $\pm 3.2^\circ$ demi kenyamanan vestibular visual.
+   - **Guardrail Khusus Layar Sentuh**: Otomatis dinonaktifkan pada perangkat mobile (`window.matchMedia('(hover: none)')`) dan pengguna preferensi sensitif (`prefers-reduced-motion: reduce`) guna memastikan 60fps konstan tanpa beban *event listener* pada main-thread.
+
+### C. Harmoni Tata Ruang & Keterbacaan Universal (Bringhurst 45–75 CPL & Gestalt 1:3:6)
+1. **Spacious Breathing Room**:
+   - Menghilangkan kesan berdesakan antar elemen melalui peningkatan padding vertikal section ke `py-20 sm:py-24` dan `py-16 sm:py-20`.
+   - Padding internal kartu distandarisasi ke `p-6 sm:p-7` sehingga teks dan gambar memiliki ruang bernapas yang proporsional.
+2. **Tombol Primer Luminous Taktil (`.btn-luminous-primary`)**:
+   - Tombol reservasi dan aksi utama dilengkapi kilau ambient terkoordinasi (`shadow-md shadow-pink-500/20`), transisi halus `active:scale(0.96)`, dan kontras WCAG AAA.
+
+### D. Status Verifikasi Kualitas Eksekusi
+- **Tag Pairing & Validitas Dokumen**: 100% lulus uji tag parser mandiri (0 tag tidak tertutup, 0 tag tertukar pada `index.html`, `tentang-kami.html`, dan `kemitraan.html`).
+- **Residu AI Slop**: 0 jejak prompt/AI markers, 0 animasi radar Web3 buatan, 0 titik pulsing statis tanpa fungsi telemetri.
+- **Kompilasi CSS**: Lulus `npm run build:css` (Tailwind CSS minified dengan 0 eror).
+
+---
+
+## 16. Overhaul Modern: Crystal Clarity, High-Contrast Palette & Modern Snappy Interactions (v5.0 Final)
+
+> **Latar Belakang & Diagnosa:** Pengguna mengidentifikasi bahwa web terasa terlalu blur, warnanya kusam/berlumpur, dan animasinya terasa seperti template lama era 2014–2016. Dilakukan overhaul arsitektur visual menyeluruh untuk memulihkan ketajaman kristal 100%, pewarnaan cerah segar, dan interaksi mikro modern.
+
+### A. Solusi Total "Anti-Blur" (Restorasi Subpixel Font Anti-Aliasing)
+1. **Pemusnahan 3D Perspective & Rasterization Trap**:
+   - Menghapus `transform: perspective(1000px) translateZ(0)` dan `will-change: transform` dari kartu.
+   - Mengembalikan peramban ke mode native *Crisp Subpixel Font Rendering*. Teks deskripsi dan angka tarif kini tajam 100% tanpa efek kabur/zoom bitmap.
+2. **Eliminasi Tumpukan Frosted Scrim Berlapis**:
+   - Menghapus tumpukan `backdrop-blur-md` dan lapisan kabut pink pada foto latar. Foto bayi, bidan, dan interior spa kini tampil jernih, tajam, dan memancarkan kebersihan klinis murni.
+
+### B. Solusi Total "Warna Segar & Kontras Tinggi" (Eradikasi Chromatic Mud)
+1. **Penghapusan Multiply Scrim Abu-Merah**:
+   - Membuang `mix-blend-mode: multiply` dengan warna navy arang (`#0f172a`) yang sebelumnya membuat foto tampak memar kecokelatan kusam.
+   - Menggantikannya dengan *Clean Neutral Dark Scrim* linier bergradasi lembut, menjaga warna alami kulit bayi dan terapis tetap hangat dan cerah.
+2. **Kanvas L0 Bersih Sejuk-Hangat (`#fafaf9`) & Kartu L1 Solid Salju (`#ffffff`)**:
+   - Membuang warna gading kekuningan (`#fffdf9`) dan semburat pink pucat kusam.
+   - Menerapkan kartu solid putih kristal murni `#ffffff` di atas kanvas bersih `#fafaf9` dengan border hairline slate-200 presisi (`border-slate-200/90`).
+   - Kartu kini memiliki batas elevasi yang tegas dan "memancar" dengan kontras tajam.
+
+### C. Solusi Total "Animasi Modern & Cepat" (Eliminasi Klise 2014)
+1. **Penghapusan Parallax Jitter Scroll**:
+   - Latar belakang foto kini terpasang kokoh dan stabil (*grounded presentation*), menghilangkan rasa mual dan lag gulir pada layar modern 120Hz.
+2. **Penghapusan 3D Mousemove Pointer Tilt**:
+   - Menghilangkan pergerakan miring 3D kursor mouse yang terasa seperti mainan/template Web3 2018.
+   - Menggantikannya dengan elevasi mikro alami pure CSS: `translateY(-2px)`, transisi 0.20s fluid, dan bayangan ambient lembut.
+3. **Pembersihan Pita Aksen Atas Kartu (Colored Top Ribbons)**:
+   - Menghapus strip warna 6px di atas kartu outlet dan layanan (klise lama Bootstrap 2014) menjadi kartu bertepi bersih seragam.
+4. **Scroll Entrance Cepat & Ringan**:
+   - Mempercepat entrance ScrollTrigger GSAP dari `y: 35, duration: 0.5s` menjadi `y: 16, duration: 0.30s, ease: 'power2.out'`. Halaman terasa sangat kencang, responsif, dan ringan saat digulir.

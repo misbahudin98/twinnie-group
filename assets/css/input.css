@@ -4,157 +4,250 @@
 
 @layer base {
   :root {
-    --brand: #ff3ba5;
+    --brand: #f43f5e;
     --brand-dark: #e11d48;
-    --brand-teal: #0d9488;
+    --brand-teal: #059669;
     --header-h: 72px;
-    --surface-warm: #fffdf9;
+    --surface-warm: #fafaf9;
   }
 
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     color: #0f172a;
-    background-color: #fffdf9;
+    background-color: #fafaf9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
   }
 
   /* Accessibility focus ring */
   *:focus-visible {
-    outline: 2px solid #ff3ba5;
+    outline: 2px solid #f43f5e;
     outline-offset: 2px;
   }
 }
 
-/* Hero Parallax Background (GPU Accelerated & HD Crisp) */
+/* Hero Parallax Background: Crisp, High-Definition, Unfiltered */
 #hero-bg {
   position: absolute;
-  top: -20%;
+  top: 0;
   left: 0;
   right: 0;
-  height: 140%;
+  height: 100%;
   width: 100%;
   background-image: url('../img/hero-3.jpg');
   background-size: cover;
-  background-position: center 35%;
+  background-position: center 30%;
   background-repeat: no-repeat;
-  filter: contrast(1.04) saturate(1.05);
-  will-change: transform;
-  image-rendering: -webkit-optimize-contrast;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+  pointer-events: none;
 }
 
-/* Parallax Alternating Section Architecture */
+/* Clean Section Stacking */
 .parallax-section {
   position: relative;
   overflow: hidden;
-  isolation: isolate; /* CRITICAL: Creates an isolated local stacking context */
+  isolation: isolate;
   z-index: 1;
-  background-color: #0f172a; /* Deep charcoal neutral fallback */
+  background-color: #1a0f19;
 }
 
 .parallax-bg-layer {
   position: absolute;
-  top: -25%;
+  top: -10%;
   left: 0;
   right: 0;
-  height: 150%;
+  height: 120%;
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: contrast(1.03) saturate(1.05);
-  will-change: transform;
   pointer-events: none;
   z-index: 1;
-  image-rendering: -webkit-optimize-contrast;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.05s linear;
 }
 
-/* High-Clarity Directional Scrim: Text on left remains 100% readable, photo shines bright & naturally */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-bg-layer {
+    top: 0;
+    height: 100%;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+}
+
+/* Radiant Maternal Warm Gradient Glaze: 
+   Rich warm amber-rose to deep berry gradient that bathes clinic & mother-baby photography 
+   in authentic maternal warmth while delivering pristine text contrast */
 .accent-overlay,
 .hero-pink-glass-layer {
   position: absolute;
   inset: 0;
   background: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.65) 0%, rgba(15, 23, 42, 0.35) 45%, rgba(15, 23, 42, 0.08) 75%, transparent 100%),
-    radial-gradient(ellipse 65% 45% at 15% 20%, rgba(244, 63, 94, 0.18) 0%, transparent 60%);
-  z-index: 2; /* Sits directly over the photo layer */
-  pointer-events: none;
-}
-
-@media (min-width: 1024px) {
-  .accent-overlay,
-  .hero-pink-glass-layer {
-    background: 
-      linear-gradient(to right, rgba(15, 23, 42, 0.58) 0%, rgba(15, 23, 42, 0.25) 45%, transparent 85%),
-      radial-gradient(ellipse 65% 45% at 15% 20%, rgba(244, 63, 94, 0.14) 0%, transparent 60%);
-  }
-}
-
-/* Translucent Frosted Veils for Content Legibility with Warm Rose Tint */
-.parallax-glass-veil {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255, 241, 244, 0.70) 0%, rgba(254, 226, 235, 0.55) 50%, rgba(255, 241, 244, 0.75) 100%);
+    linear-gradient(135deg, rgba(38, 12, 28, 0.80) 0%, rgba(76, 18, 48, 0.62) 36%, rgba(159, 18, 57, 0.44) 70%, rgba(225, 29, 72, 0.28) 100%),
+    radial-gradient(circle at 50% 25%, rgba(244, 63, 94, 0.26) 0%, rgba(251, 113, 133, 0.14) 40%, transparent 75%);
   z-index: 2;
   pointer-events: none;
 }
 
-/* Neutral High-Clarity Scrim for Clinical Credibility (Bekam & Spa photos stay authentic) */
+/* Centered Warm Glaze for Hero Sections (Symmetrical warmth highlights titles without blotting out background photography) */
+.hero-scrim-centered {
+  background: 
+    linear-gradient(180deg, rgba(36, 10, 26, 0.76) 0%, rgba(68, 16, 44, 0.54) 46%, rgba(30, 8, 22, 0.78) 100%),
+    radial-gradient(circle at 50% 30%, rgba(244, 63, 94, 0.28) 0%, rgba(251, 146, 60, 0.14) 45%, transparent 75%) !important;
+}
+
+/* Warm Atmospheric Rose Veil for Parallax Content (Crisp photographic depth with rich, harmonious contrast) */
 .parallax-rose-veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.38) 50%, rgba(15, 23, 42, 0.60) 100%);
+  background: 
+    linear-gradient(180deg, rgba(36, 10, 26, 0.74) 0%, rgba(64, 16, 42, 0.52) 50%, rgba(28, 8, 20, 0.76) 100%),
+    radial-gradient(ellipse at 50% 40%, rgba(244, 63, 94, 0.20) 0%, transparent 70%);
   z-index: 2;
   pointer-events: none;
 }
 
-/* Solid Curtain Layer - Higher Z-Index to slide smoothly over parallax sections */
+/* Dedicated High-Contrast Warm Call to Action Section */
+.section-cta-warm {
+  position: relative;
+  z-index: 20;
+  background-color: #881337;
+  background-image: 
+    linear-gradient(135deg, #881337 0%, #9f1239 30%, #be123c 65%, #e11d48 100%),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.12) 0%, transparent 50%);
+  border-top: 1px solid rgba(244, 63, 94, 0.40);
+  border-bottom: 1px solid rgba(244, 63, 94, 0.30);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.25), 0 10px 30px -5px rgba(136, 19, 55, 0.30);
+}
+
+/* Solid Canvas Layer - Ultra-Clean Luminous White Surface */
 .curtain-solid-section {
   position: relative;
-  z-index: 20; /* Slides directly OVER parallax sections (z-index 1) */
-  background-color: #fffdf9;
-  box-shadow: 0 -10px 30px -5px rgba(15, 23, 42, 0.05), 0 10px 30px -5px rgba(15, 23, 42, 0.05);
+  z-index: 20;
+  background-color: #fafaf9;
+  background-image: linear-gradient(180deg, #fafaf9 0%, #ffffff 30%, #ffffff 75%, #fafaf9 100%);
+  border-top: 1px solid rgba(226, 232, 240, 0.85);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
 }
 
-/* Warm Luxury Obsidian Footer */
+.bg-maternal-pearl {
+  background-color: #fafaf9;
+  background-image: linear-gradient(180deg, #fafaf9 0%, #ffffff 50%, #fafaf9 100%);
+}
+
+/* Modern Crisp White Card with Kinetic Tactility (Apple Spatial Grade Asymmetric Press) */
+.card-spatial-3d {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.90);
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 4px 16px -2px rgba(15, 23, 42, 0.04);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.24s ease;
+  will-change: transform, box-shadow;
+}
+
+.card-spatial-3d:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244, 63, 94, 0.38);
+  box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.05), 0 18px 36px -4px rgba(225, 29, 72, 0.10);
+}
+
+.card-spatial-3d:active {
+  transform: translateY(1px) scale(0.975);
+  box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.04), 0 4px 10px -2px rgba(225, 29, 72, 0.06);
+  transition: transform 0.07s ease-out, box-shadow 0.07s ease-out;
+}
+
+/* Vibrant Maternal Action Button with Kinetic Tactility, Specular Shimmer & Inner Specular Glow */
+.btn-luminous-primary {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #f43f5e 0%, #e11d48 50%, #be123c 100%);
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.40), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15), 0 4px 14px 0 rgba(225, 29, 72, 0.32);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1), background-image 0.24s ease;
+  will-change: transform, box-shadow;
+}
+
+.btn-luminous-primary:hover {
+  background-image: linear-gradient(135deg, #fb7185 0%, #f43f5e 50%, #e11d48 100%);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.50), inset 0 -1px 0 0 rgba(0, 0, 0, 0.10), 0 8px 24px -2px rgba(225, 29, 72, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-luminous-primary:active {
+  transform: translateY(1px) scale(0.96);
+  box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.20), 0 2px 6px 0 rgba(225, 29, 72, 0.25);
+  transition: transform 0.07s ease-out, box-shadow 0.07s ease-out;
+}
+
+/* Kinetic Specular Highlight Beam on Hover */
+.btn-luminous-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.22) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: left 0.6s ease;
+}
+
+.btn-luminous-primary:hover::after {
+  left: 140%;
+}
+
+/* Deep High-Contrast Obsidian Footer */
 .footer-warm-dark {
-  background-color: #0e0912 !important;
-  background-image: linear-gradient(180deg, #140d18 0%, #0c0710 100%) !important;
-  border-top: 1px solid rgba(244, 63, 94, 0.20) !important;
+  background-color: #0b0f17 !important;
+  background-image: linear-gradient(180deg, #0f172a 0%, #070a10 100%) !important;
+  border-top: 1px solid rgba(30, 41, 59, 0.90) !important;
 }
 
-/* Soft Downward Fade for seamless transition into solid content (Subtle & Natural) */
+/* Seamless Bottom Transition Scrim: Soft warm feathering without obscuring lower photo content */
 .hero-readability {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(to bottom, 
-    rgba(15, 23, 42, 0.20) 0%, 
-    rgba(15, 23, 42, 0.00) 45%, 
-    rgba(255, 253, 249, 0.12) 80%, 
-    rgba(255, 253, 249, 0.38) 100%
-  );
-  z-index: 3;
+  background: linear-gradient(to bottom, transparent 75%, rgba(26, 15, 25, 0.45) 100%);
+  z-index: 2;
+}
+
+/* Unified Floating Action Dock: Premium Ergonomic Frosted Glass Capsule */
+.floating-action-dock {
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 30px -4px rgba(15, 23, 42, 0.14), 0 2px 8px -2px rgba(244, 63, 94, 0.10);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.20s ease, box-shadow 0.24s ease;
+}
+
+.floating-action-dock:hover {
+  box-shadow: 0 12px 36px -4px rgba(15, 23, 42, 0.18), 0 4px 14px -2px rgba(244, 63, 94, 0.18);
+  transform: translateY(-2px);
 }
 
 .hero-text-shadow {
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.60), 0 4px 30px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.50), 0 4px 24px rgba(0, 0, 0, 0.35);
 }
 
 .floating-island {
-  box-shadow: 0 25px 60px -15px rgba(225, 29, 72, 0.15), 0 12px 32px -10px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.15), 0 8px 24px -6px rgba(15, 23, 42, 0.08);
 }
 
-/* Elegant Animated Nav Underline from ref.php */
+/* Modern Nav Underline */
 .menu-item {
   position: relative;
   padding: 0.25rem 0.5rem;
@@ -173,11 +266,11 @@
   left: 0.25rem;
   right: 0.25rem;
   bottom: -4px;
-  height: 2.5px;
-  background: linear-gradient(90deg, #ec4899, #f43f5e);
+  height: 2px;
+  background: #f43f5e;
   transform-origin: left center;
   transform: scaleX(0);
-  transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.16s ease;
   border-radius: 9999px;
   opacity: 0;
 }
@@ -194,34 +287,10 @@
   transform: scale(0.96) translateY(1px);
 }
 
-/* Rose Glass UI */
-.rose-glass-card {
-  background: rgba(76, 5, 25, 0.35);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(254, 205, 211, 0.25);
-  box-shadow: 0 12px 40px 0 rgba(225, 29, 72, 0.16);
-}
-
-.rose-glass-pill {
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.rose-glass-card-light {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(254, 205, 211, 0.6);
-  box-shadow: 0 16px 48px 0 rgba(225, 29, 72, 0.12);
-}
-
 /* Navbar Active State Styling */
 .nav-link {
   position: relative;
-  transition: color 0.2s ease;
+  transition: color 0.18s ease;
 }
 
 .nav-link.active,
@@ -230,48 +299,21 @@
   font-weight: 700 !important;
 }
 
-/* Fallback underline if menu-underline is not present */
-.nav-link:not(.menu-item).active::after,
-.nav-link-active:not(.menu-item)::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  right: 0;
-  height: 2.5px;
-  background: #ff3ba5;
-  border-radius: 9999px;
-}
-
-/* Glass UI Elements */
-.glass-nav {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.90);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-}
-
 .focus-ring:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(255, 59, 165, 0.2);
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.25);
 }
 
-/* Modal and Drawer transitions */
+/* Modal and Drawer Transitions */
 .modal-backdrop-anim {
-  transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.20s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-panel-anim {
-  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.24s ease;
+  transition: transform 0.20s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.20s ease;
 }
 
-/* Custom Ripple & Pill styling */
+/* Badge Pill */
 .badge-pill {
   display: inline-flex;
   align-items: center;
@@ -287,18 +329,33 @@
   height: 44px;
   border-radius: 9999px;
   overflow: hidden;
-  border: 1.5px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.90);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   background: white;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
+  transition: transform 0.18s ease;
 }
 
 .logo-circle:hover {
-  transform: scale(1.12);
+  transform: scale(1.05);
+}
+
+/* Fluid Tactility for Action Buttons */
+[data-open-booking],
+.hero-svc-btn,
+button[type="submit"] {
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+[data-open-booking]:hover {
+  transform: translateY(-1px);
+}
+
+[data-open-booking]:active {
+  transform: translateY(1px) scale(0.97);
 }
 
 .logo-circle img {
@@ -307,14 +364,9 @@
   object-fit: cover;
 }
 
-/* Smooth hide for lazyload & HD Pixel Clarity */
+/* Smooth hide for lazyload */
 img[loading="lazy"] {
-  transition: opacity 0.3s ease-in;
-}
-
-img,
-.img-hd {
-  image-rendering: -webkit-optimize-contrast;
+  transition: opacity 0.25s ease-in;
 }
 
 /* Reduced motion preference */
@@ -324,8 +376,5 @@ img,
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-  #hero-bg {
-    transform: none !important;
   }
 }

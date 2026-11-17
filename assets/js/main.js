@@ -76,51 +76,56 @@
   }
 
   /**
-   * Parallax Scroll Effect (GPU Accelerated, Lightweight with rAF)
-   * Mathematically clamped to prevent any bottom/top gap or whitespace
+   * Atmospheric Parallax Scroll (Option A: High-Performance GPU translate3d)
+   * Smoothly drives background layers on Hero, Testimonials, and subpages
+   * with clamped damping ratio (0.12x - 0.20x) and safe boundary containment
    */
   let isParallaxTicking = false;
-  function handleParallaxScroll() {
-    if (isParallaxTicking) return;
-    isParallaxTicking = true;
+  const parallaxLayers = [];
 
-    requestAnimationFrame(() => {
-      const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-      const windowHeight = window.innerHeight;
+  function initAtmosphericParallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      // 1. Hero Parallax: Clamped safely within the 40% buffer
-      if (dom.heroBg && dom.heroSection && scrollPos < 1400) {
-        const heroHeight = dom.heroSection.offsetHeight || 600;
-        const maxHeroOffset = heroHeight * 0.18;
-        const heroOffset = Math.min(scrollPos * 0.20, maxHeroOffset);
-        dom.heroBg.style.transform = `translate3d(0, ${heroOffset.toFixed(1)}px, 0)`;
+    parallaxLayers.length = 0;
+    const sections = document.querySelectorAll('.parallax-section');
+    sections.forEach(sec => {
+      const bg = sec.querySelector('.parallax-bg-layer');
+      if (bg) {
+        const speed = parseFloat(bg.getAttribute('data-parallax-speed')) || 0.16;
+        parallaxLayers.push({ section: sec, bg: bg, speed: speed });
       }
-
-      // 2. Alternating Section Parallax Layers across the page
-      const parallaxLayers = document.querySelectorAll('.parallax-bg-layer');
-      parallaxLayers.forEach(layer => {
-        if (dom.heroBg && layer === dom.heroBg) return;
-        const parent = layer.parentElement;
-        if (!parent) return;
-        const rect = parent.getBoundingClientRect();
-        
-        // Animate only when near viewport
-        if (rect.top < windowHeight + 100 && rect.bottom > -100) {
-          const speed = parseFloat(layer.getAttribute('data-parallax-speed')) || 0.12;
-          // Center-relative calculation: offset = 0 when section is centered on screen
-          const sectionCenter = rect.top + rect.height / 2;
-          const viewportCenter = windowHeight / 2;
-          const rawOffset = (sectionCenter - viewportCenter) * speed;
-          
-          // Strict clamp: never exceeds 18% of section height (well within the 25% top/bottom bleed)
-          const maxTravel = rect.height * 0.18;
-          const clampedOffset = Math.max(-maxTravel, Math.min(maxTravel, rawOffset));
-          layer.style.transform = `translate3d(0, ${clampedOffset.toFixed(1)}px, 0)`;
-        }
-      });
-
-      isParallaxTicking = false;
     });
+
+    if (parallaxLayers.length > 0) {
+      window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+      window.addEventListener('resize', requestParallaxUpdate, { passive: true });
+      updateAtmosphericParallax();
+    }
+  }
+
+  function requestParallaxUpdate() {
+    if (!isParallaxTicking) {
+      window.requestAnimationFrame(updateAtmosphericParallax);
+      isParallaxTicking = true;
+    }
+  }
+
+  function updateAtmosphericParallax() {
+    const viewportH = window.innerHeight;
+
+    parallaxLayers.forEach(item => {
+      const rect = item.section.getBoundingClientRect();
+      if (rect.bottom >= -60 && rect.top <= viewportH + 60) {
+        const centerOffset = (rect.top + rect.height / 2) - (viewportH / 2);
+        let yTranslate = centerOffset * item.speed;
+        if (yTranslate > 50) yTranslate = 50;
+        if (yTranslate < -50) yTranslate = -50;
+
+        item.bg.style.transform = `translate3d(0, ${yTranslate.toFixed(1)}px, 0)`;
+      }
+    });
+
+    isParallaxTicking = false;
   }
 
   /**
@@ -348,9 +353,9 @@
     heroPills.forEach((btn) => {
       const idx = parseInt(btn.getAttribute('data-hero-service'), 10);
       if (idx === currentServiceIndex) {
-        btn.className = 'hero-svc-btn active px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-rose-500 text-white shadow-md shadow-rose-500/30 scale-105';
+        btn.className = 'hero-svc-btn active px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-rose-500 text-white shadow-xs';
       } else {
-        btn.className = 'hero-svc-btn px-3.5 py-2 rounded-xl text-xs font-semibold transition-all bg-white/20 hover:bg-white/30 text-white backdrop-blur-md border border-white/25';
+        btn.className = 'hero-svc-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-white/20 hover:bg-white/30 text-white backdrop-blur-md border border-white/25';
       }
     });
   }
@@ -401,15 +406,15 @@
   }
 
   /**
-   * Setup Floating CTAs auto-hide on modal open
+   * Setup Floating CTAs auto-hide on modal open with smooth spring physics
    */
   function setupFloatingCTAs() {
     if (!dom.floatingCTAs) return;
     window.addEventListener('modal:open', () => {
-      dom.floatingCTAs.classList.add('opacity-0', 'pointer-events-none', 'scale-90');
+      dom.floatingCTAs.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-3');
     });
     window.addEventListener('modal:close', () => {
-      dom.floatingCTAs.classList.remove('opacity-0', 'pointer-events-none', 'scale-90');
+      dom.floatingCTAs.classList.remove('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-3');
     });
   }
 
@@ -417,12 +422,8 @@
    * Setup Event Delegates (Zero Silent Failure)
    */
   function setupEventDelegates() {
-    // Scroll & Resize Events
-    window.addEventListener('scroll', () => {
-      handleHeaderScroll();
-      handleParallaxScroll();
-    }, { passive: true });
-    window.addEventListener('resize', handleParallaxScroll, { passive: true });
+    // Scroll Events
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
 
     // Mobile Menu
     dom.mobileMenuBtn?.addEventListener('click', () => toggleMobileMenu());
@@ -727,7 +728,7 @@
   }
 
   /**
-   * Scroll-Driven Staggered Entrance Animations (GSAP ScrollTrigger)
+   * Scroll-Driven Snappy Entrance Animations (Modern Snappy Standard)
    */
   function initScrollAnimations() {
     if (typeof window.gsap === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -743,9 +744,9 @@
             trigger: '#metrics',
             start: 'top 90%'
           },
-          y: 25,
+          y: 16,
           opacity: 0,
-          duration: 0.5,
+          duration: 0.32,
           ease: 'power2.out'
         });
       }
@@ -755,12 +756,12 @@
         gsap.from('#layanan-title, #serviceCategoryTabs', {
           scrollTrigger: {
             trigger: '#layanan',
-            start: 'top 85%'
+            start: 'top 88%'
           },
-          y: 20,
+          y: 14,
           opacity: 0,
-          duration: 0.45,
-          stagger: 0.1,
+          duration: 0.30,
+          stagger: 0.08,
           ease: 'power2.out'
         });
       }
@@ -771,48 +772,40 @@
         gsap.from(pillarCards, {
           scrollTrigger: {
             trigger: '#servicePillarsGrid',
-            start: 'top 82%'
+            start: 'top 85%'
           },
-          y: 35,
+          y: 16,
           opacity: 0,
-          duration: 0.5,
-          stagger: 0.1,
+          duration: 0.30,
+          stagger: 0.08,
           ease: 'power2.out'
         });
       }
 
       // Dewan Tenaga Ahli Cards
-      const expertCards = document.querySelectorAll('section:has(#layanan) ~ section .grid-cols-1.sm\\:grid-cols-3 > div, section.curtain-solid-section .grid-cols-1.sm\\:grid-cols-3 > div');
+      const expertCards = document.querySelectorAll('#tenaga-ahli .grid > div, .expert-card');
       if (expertCards.length) {
         gsap.from(expertCards, {
           scrollTrigger: {
             trigger: expertCards[0].parentElement,
-            start: 'top 85%'
+            start: 'top 88%'
           },
-          y: 30,
+          y: 16,
           opacity: 0,
-          duration: 0.45,
-          stagger: 0.12,
+          duration: 0.30,
+          stagger: 0.08,
           ease: 'power2.out'
         });
       }
     }
   }
 
-  function initButtonPhysics() {
-    const actionBtns = document.querySelectorAll('[data-open-booking], .hero-svc-btn');
-    actionBtns.forEach(btn => {
-      btn.addEventListener('mouseenter', () => {
-        if (typeof window.gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          window.gsap.to(btn, { scale: 1.03, duration: 0.16, ease: 'power1.out' });
-        }
-      });
-      btn.addEventListener('mouseleave', () => {
-        if (typeof window.gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          window.gsap.to(btn, { scale: 1, duration: 0.16, ease: 'power1.out' });
-        }
-      });
-    });
+  /**
+   * Modern Clean Micro-Interactions
+   * Pure CSS GPU elevation (.card-spatial-3d:hover) without mousemove rasterization blur
+   */
+  function initSpatial3DTilt() {
+    // Pure CSS handles crisp hover elevation without subpixel text blur
   }
 
   /**
@@ -826,19 +819,19 @@
     setupFloatingCTAs();
     handleHeaderScroll();
     initNavbarScrollSpy();
+    initAtmosphericParallax();
     initGSAPHeroAnimations();
     initAnimatedCounters();
     initCategoryTabs();
     initScrollAnimations();
-    initButtonPhysics();
   }
 
   window.addEventListener('load', () => {
+    initAtmosphericParallax();
     initGSAPHeroAnimations();
     initAnimatedCounters();
     initCategoryTabs();
     initScrollAnimations();
-    initButtonPhysics();
   });
 
   if (document.readyState === 'loading') {

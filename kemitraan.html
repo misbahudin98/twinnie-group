@@ -58,16 +58,16 @@
   </script>
 </head>
 
-<body class="bg-[#FFFDF9] text-slate-900 font-sans antialiased selection:bg-pink-100 selection:text-pink-600">
+<body class="bg-[#fafaf9] text-slate-900 font-sans antialiased selection:bg-pink-100 selection:text-pink-600">
 
   <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
   <div class="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 text-white text-xs sm:text-sm py-2 px-4">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span class="font-medium">Layanan Home Visit Area Kota Malang, Kab. Malang &amp; Batu (Maks. 10km) | IR WhatsApp: +62 895-327-268977</span>
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2 min-w-0">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+        <span class="font-medium leading-snug break-words">Layanan Home Visit Area Kota Malang, Kab. Malang &amp; Batu (Maks. 10km) | IR WhatsApp: +62 895-327-268977</span>
       </div>
-      <a href="https://www.instagram.com/twinnie_care/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 font-medium hover:underline opacity-95">
+      <a href="https://www.instagram.com/twinnie_care/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 font-medium hover:underline opacity-95 shrink-0">
         <span>Instagram: @twinnie_care</span>
       </a>
     </div>
@@ -142,7 +142,7 @@
     <!-- Parallax Background Layer (GPU Accelerated) -->
     <div class="parallax-bg-layer" style="background-image: url('assets/img/hero-3.jpg');" data-parallax-speed="0.18"></div>
     <!-- Translucent Frosted Veil Layer -->
-    <div class="hero-pink-glass-layer"></div>
+    <div class="hero-pink-glass-layer hero-scrim-centered"></div>
     <div class="hero-readability pointer-events-none"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
@@ -151,18 +151,20 @@
           <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
           <span>Investasi Berkelanjutan &amp; Sukuk Syariah</span>
         </div>
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-black text-white tracking-tight leading-tight hero-text-shadow">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-black text-white tracking-tight leading-tight hero-text-shadow break-words">
           Kemitraan Investasi <span class="text-rose-200">Berbasis Syariah</span>
         </h1>
-        <p class="mt-5 text-base sm:text-lg text-white/95 leading-relaxed font-sans max-w-2xl mx-auto font-medium hero-text-shadow">
+        <p class="mt-5 text-base sm:text-lg text-white/95 leading-relaxed font-sans max-w-2xl mx-auto font-medium hero-text-shadow break-words">
           Bagi hasil riil bebas riba/gharar (Metode Sukuk Musyarakah), alokasi SDM bidan &amp; terapis bersertifikasi siap kerja, jaminan proteksi modal jika pailit, serta isolasi keuangan outlet mandiri.
         </p>
         <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <span class="px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-white text-xs font-semibold shadow-2xs">
-            📑 Legalitas Notaris &amp; Akad Syariah Sah
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-white text-[11px] sm:text-xs font-semibold shadow-2xs max-w-full text-center leading-tight break-words">
+            <svg class="w-3.5 h-3.5 text-emerald-300 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span class="break-words">Legalitas Notaris &amp; Akad Syariah Sah</span>
           </span>
-          <span class="px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-white text-xs font-semibold shadow-2xs">
-            📈 Bagi Hasil Mulai 20 Juta s/d 150 Juta
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-white text-[11px] sm:text-xs font-semibold shadow-2xs shrink-0">
+            <svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            <span>Bagi Hasil Mulai 20 Juta s/d 150 Juta</span>
           </span>
         </div>
       </div>
@@ -170,7 +172,7 @@
   </section>
 
   <!-- ================= MAIN LAYOUT WITH STICKY SIDEBAR ================= -->
-  <section class="curtain-solid-section py-20 bg-[#FFFDF9] border-y border-stone-200/80 relative z-10">
+  <section class="curtain-solid-section py-20 sm:py-24 border-y border-rose-100/70 relative z-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
@@ -179,8 +181,8 @@
           
           <!-- 1. Kemitraan Murni Section -->
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-pink-600">Model Bisnis Utama</span>
-            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 mt-1 mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-pink-100/80 border border-pink-200/80 text-pink-700 font-semibold text-xs mb-3 shadow-2xs">Model Bisnis Utama</span>
+            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 mt-1 mb-4 tracking-tight">
               1. Skema Kemitraan Murni (Profit Sharing)
             </h2>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
@@ -189,7 +191,7 @@
 
             <div class="space-y-4">
               <!-- Tier Silver (20 Jt) -->
-              <div class="p-5 rounded-2xl bg-[#FFFDF9] border border-slate-200/90 shadow-2xs hover:border-pink-300 transition">
+              <div class="card-spatial-3d p-6 rounded-2xl">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-heading font-extrabold text-lg text-slate-900">Paket Silver — Rp 20 Juta</span>
                   <span class="text-xs font-semibold bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-full">1 Tahun</span>
@@ -205,7 +207,7 @@
               </div>
 
               <!-- Tier Gold (50 Jt) -->
-              <div class="p-5 rounded-2xl bg-[#FFFDF9] border border-slate-200/90 shadow-2xs hover:border-pink-300 transition">
+              <div class="card-spatial-3d p-6 rounded-2xl">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-heading font-extrabold text-lg text-slate-900">Paket Gold — Rp 50 Juta</span>
                   <span class="text-xs font-semibold bg-pink-100 text-pink-700 px-2.5 py-0.5 rounded-full">2 Tahun</span>
@@ -221,7 +223,7 @@
               </div>
 
               <!-- Tier Platinum (150 Jt) -->
-              <div class="p-5 rounded-2xl bg-slate-900 text-white border-2 border-pink-500 shadow-md">
+              <div class="p-6 rounded-2xl bg-slate-900 text-white border-2 border-rose-500 shadow-xl transition-all">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-heading font-extrabold text-lg text-white">Paket Platinum — Rp 150 Juta</span>
                   <span class="text-xs font-semibold bg-pink-500 text-white px-2.5 py-0.5 rounded-full">3 Tahun</span>
@@ -240,21 +242,27 @@
 
           <!-- 2. Metode Sukuk Syariah & Proteksi Pailit -->
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Akad Bebas Riba</span>
-            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 mt-1 mb-4">
-              2. Metode Sukuk Syariah & Proteksi Pailit
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200/80 text-emerald-800 font-semibold text-xs mb-3 shadow-2xs">Akad Bebas Riba</span>
+            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 mt-1 mb-4 tracking-tight">
+              2. Metode Sukuk Syariah &amp; Proteksi Pailit
             </h2>
             <div class="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
-              <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-100">
-                <h3 class="font-heading font-bold text-slate-900 text-base mb-1">Metode Sukuk Musyarakah & Mudharabah</h3>
-                <p>
+              <div class="card-spatial-3d p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                  <h3 class="font-heading font-bold text-slate-900 text-base">Metode Sukuk Musyarakah &amp; Mudharabah</h3>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Seluruh akad terbebas dari bunga riba, maysir (judi/spekulasi), dan gharar (ketidakjelasan). Pembagian dividen disesuaikan dengan laporan laba-rugi riil operasional klinik yang diverifikasi bersama.
                 </p>
               </div>
 
-              <div class="p-5 rounded-2xl bg-rose-50/60 border border-rose-100">
-                <h3 class="font-heading font-bold text-slate-900 text-base mb-1">Jaminan Pengembalian Jika Terjadi Pailit</h3>
-                <p>
+              <div class="card-spatial-3d p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                  <h3 class="font-heading font-bold text-slate-900 text-base">Jaminan Pengembalian Jika Terjadi Pailit</h3>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Jika dalam kurun waktu tertentu bisnis mengalami force majeure atau kondisi pailit, modal investor <strong>dilindungi oleh klausul pengembalian proporsional nilai aset modal</strong> sesuai akta notaris resmi, meminimalkan risiko kerugian total investor.
                 </p>
               </div>
@@ -263,11 +271,11 @@
 
           <!-- 3. Skema Distributor & Outlet Mandiri -->
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-indigo-700">Ekspansi Mandiri</span>
-            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 mt-1 mb-4">
-              3. Skema Distributor & Isolasi Keuangan Outlet
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-indigo-100/80 border border-indigo-200/80 text-indigo-800 font-semibold text-xs mb-3 shadow-2xs">Ekspansi Mandiri</span>
+            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 mt-1 mb-4 tracking-tight">
+              3. Skema Distributor &amp; Isolasi Keuangan Outlet
             </h2>
-            <div class="p-5 rounded-2xl bg-indigo-50/60 border border-indigo-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <div class="card-spatial-3d p-6 rounded-2xl text-xs sm:text-sm text-slate-600 leading-relaxed">
               <p class="mb-2">
                 Bagi mitra yang membuka outlet mandiri di bawah lisensi Twinnie Group, <strong>manajemen keuangan outlet mereka 100% terisolasi (ring-fenced) dari entitas pusat</strong>.
               </p>
@@ -280,10 +288,10 @@
           </div>
 
           <!-- Dewan Pengawas Investasi: Tjahya Kuntjoro, SE -->
-          <div class="p-6 rounded-3xl bg-[#FFFDF9] border border-slate-200 flex items-center gap-5">
+          <div class="card-spatial-3d p-6 rounded-3xl flex items-center gap-5">
             <img src="assets/img/tjahya-kuntjoro.SE.jpg" alt="Tjahya Kuntjoro, SE" class="w-20 h-20 rounded-2xl object-cover object-top border-2 border-slate-200 flex-shrink-0" loading="lazy">
             <div>
-              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Penasihat Finansial & Bisnis</div>
+              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Penasihat Finansial &amp; Bisnis</div>
               <h3 class="font-heading font-bold text-slate-900 text-base">Tjahya Kuntjoro, SE</h3>
               <p class="text-xs text-slate-600 mt-1">
                 "Kami berkomitmen memastikan setiap rupiah modal investor dikelola dengan integritas syariah, pembukuan transparan, dan proteksi hukum yang jelas."
@@ -352,7 +360,7 @@
           </div>
 
           <!-- Quick Contact Box in Sidebar -->
-          <div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-2 text-xs">
+          <div class="card-spatial-3d p-6 rounded-2xl space-y-2 text-xs">
             <div class="font-bold text-slate-900 text-sm">Butuh Pertemuan Langsung?</div>
             <p class="text-slate-600 leading-relaxed">
               Kantor kami terbuka untuk konsultasi bisnis &amp; studi kelayakan di Villa Bunga Sepatu B-3, Lowokwaru, Kota Malang.
@@ -405,10 +413,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         
         <!-- Outlet 1: Twinnie Care & Nimpuna -->
-        <div class="bg-white/95 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-white/80 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-          <!-- Top Accent Ribbon -->
-          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-pink-500 via-rose-500 to-rose-600"></div>
-
+        <div class="card-spatial-3d rounded-3xl p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden">
           <div>
             <!-- Map Iframe with Performance & Interactive Badges -->
             <div class="relative w-full h-52 rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-100 mb-4 shadow-inner">
@@ -481,10 +486,7 @@
         </div>
 
         <!-- Outlet 2: Allura Woman Spa -->
-        <div class="bg-white/95 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-white/80 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-          <!-- Top Accent Ribbon -->
-          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600"></div>
-
+        <div class="card-spatial-3d rounded-3xl p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden">
           <div>
             <!-- Map Iframe with Performance & Interactive Badges -->
             <div class="relative w-full h-52 rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-100 mb-4 shadow-inner">
@@ -558,10 +560,7 @@
         </div>
 
         <!-- Outlet 3: Biro Psikologi Rumah Ameera -->
-        <div class="bg-white/95 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-white/80 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-          <!-- Top Accent Ribbon -->
-          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600"></div>
-
+        <div class="card-spatial-3d rounded-3xl p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden">
           <div>
             <!-- Map Iframe with Performance & Interactive Badges -->
             <div class="relative w-full h-52 rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-100 mb-4 shadow-inner">
@@ -638,6 +637,29 @@
     </div>
   </section>
 
+  <!-- ================= PRE-FOOTER CALL TO ACTION: KEMITRAAN ================= -->
+  <section class="section-cta-warm py-16 sm:py-20 text-white overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-xs shadow-xs mb-4">
+        Investasi Berkah Bebas Riba
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-heading font-black text-white tracking-tight hero-text-shadow mb-4">
+        Mari Bertumbuh Bersama Ekosistem Kesehatan Twinnie Group
+      </h2>
+      <p class="text-sm sm:text-base text-rose-50 font-medium max-w-2xl mx-auto mb-8 font-sans leading-relaxed hero-text-shadow">
+        Dapatkan bagi hasil riil transparan dengan proteksi modal, akad Musyarakah sah di hadapan notaris, dan dukungan operasional penuh dari praktisi medis bersertifikasi.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button type="button" data-open-booking class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-slate-900 font-extrabold text-sm shadow-xl hover:bg-rose-50 hover:text-rose-950 transition active:scale-95 focus-ring" aria-label="Ajukan kemitraan investasi Twinnie Group">
+          Ajukan Kemitraan Sekarang
+        </button>
+        <a href="https://wa.me/62895327268977?text=Halo%20Twinnie%20Group,%20saya%20tertarik%20mengajukan%20kemitraan%20investasi.%20Mohon%20jadwalkan%20konsultasi." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-rose-950/40 hover:bg-rose-950/60 border border-white/35 text-white font-bold text-sm transition text-center focus-ring">
+          Jadwalkan Konsultasi (WA)
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= SITE FOOTER WITH 9 PARTNER LOGOS & NAMES ================= -->
   <footer id="siteFooter" class="curtain-solid-section footer-warm-dark text-slate-200 pt-16 pb-12 text-sm relative z-20 w-full overflow-hidden">
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -666,8 +688,8 @@
             <img src="assets/img/logo-twinnie.jpg" alt="Logo Twinnie Care" class="w-full h-full object-contain rounded-lg" width="48" height="48" loading="lazy">
           </div>
           <div class="w-full">
-            <span class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors block truncate">Twinnie Care</span>
-            <span class="text-[10px] text-slate-400 font-medium block mt-0.5 truncate">Ibu &amp; Bayi</span>
+            <span class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors block break-words leading-tight">Twinnie Care</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5 break-words leading-tight">Ibu &amp; Bayi</span>
           </div>
         </div>
 
@@ -677,8 +699,8 @@
             <img src="assets/img/logo-allura.jpg" alt="Logo Allura Woman Spa" class="w-full h-full object-contain rounded-lg" width="48" height="48" loading="lazy">
           </div>
           <div class="w-full">
-            <span class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors block truncate">Allura Spa</span>
-            <span class="text-[10px] text-slate-400 font-medium block mt-0.5 truncate">Khusus Wanita</span>
+            <span class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors block break-words leading-tight">Allura Spa</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5 break-words leading-tight">Khusus Wanita</span>
           </div>
         </div>
 
@@ -688,8 +710,8 @@
             <img src="assets/img/logo-nimpuna.jpg" alt="Logo Nimpuna Terapi Holistik" class="w-full h-full object-contain rounded-lg" width="48" height="48" loading="lazy">
           </div>
           <div class="w-full">
-            <span class="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors block truncate">Nimpuna</span>
-            <span class="text-[10px] text-slate-400 font-medium block mt-0.5 truncate">Terapi Holistik</span>
+            <span class="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors block break-words leading-tight">Nimpuna</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5 break-words leading-tight">Terapi Holistik</span>
           </div>
         </div>
 
@@ -699,8 +721,8 @@
             <img src="assets/img/logo-rumah-ameera.jpg" alt="Logo Biro Psikologi Rumah Ameera" class="w-full h-full object-contain rounded-lg" width="48" height="48" loading="lazy">
           </div>
           <div class="w-full">
-            <span class="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors block truncate">Rumah Ameera</span>
-            <span class="text-[10px] text-slate-400 font-medium block mt-0.5 truncate">Biro Psikologi</span>
+            <span class="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors block break-words leading-tight">Rumah Ameera</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5 break-words leading-tight">Biro Psikologi</span>
           </div>
         </div>
 
@@ -710,8 +732,8 @@
             <img src="assets/img/logo-psikolog.jpg" alt="Logo Psikolog Klinis" class="w-full h-full object-contain rounded-lg" width="48" height="48" loading="lazy">
           </div>
           <div class="w-full">
-            <span class="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors block truncate">Psikolog</span>
-            <span class="text-[10px] text-slate-400 font-medium block mt-0.5 truncate">Tumbuh Kembang</span>
+            <span class="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors block break-words leading-tight">Psikolog</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5 break-words leading-tight">Tumbuh Kembang</span>
           </div>
         </div>
 
@@ -721,8 +743,8 @@
             <img src="assets/img/logo-uk-family-care.png" alt="Logo UK Family Care" class="w-full h-full object-contain rounded-lg" width="48" height="48" loading="lazy">
           </div>
           <div class="w-full">
-            <span class="text-xs font-bold text-white group-hover:text-amber-300 transition-colors block truncate">UK Family</span>
-            <span class="text-[10px] text-slate-400 font-medium block mt-0.5 truncate">Klinik Pratama</span>
+            <span class="text-xs font-bold text-white group-hover:text-amber-300 transition-colors block break-words leading-tight">UK Family</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5 break-words leading-tight">Klinik Pratama</span>
           </div>
         </div>
 
@@ -732,8 +754,8 @@
             <img src="assets/img/logo-stabha.png" alt="Logo SMK Taruna Bhakti" class="w-full h-full object-contain rounded-lg" width="48" height="48" loading="lazy">
           </div>
           <div class="w-full">
-            <span class="text-xs font-bold text-white group-hover:text-blue-300 transition-colors block truncate">SMK Stabha</span>
-            <span class="text-[10px] text-slate-400 font-medium block mt-0.5 truncate">Mitra Vokasi</span>
+            <span class="text-xs font-bold text-white group-hover:text-blue-300 transition-colors block break-words leading-tight">SMK Stabha</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5 break-words leading-tight">Mitra Vokasi</span>
           </div>
         </div>
 
@@ -743,8 +765,8 @@
             <img src="assets/img/logo-mufi.png" alt="Logo Mufi Journey" class="w-full h-full object-contain rounded-lg" width="48" height="48" loading="lazy">
           </div>
           <div class="w-full">
-            <span class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors block truncate">Mufi Journey</span>
-            <span class="text-[10px] text-slate-400 font-medium block mt-0.5 truncate">Parenting Space</span>
+            <span class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors block break-words leading-tight">Mufi Journey</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5 break-words leading-tight">Parenting Space</span>
           </div>
         </div>
 
@@ -754,8 +776,8 @@
             <img src="assets/img/logo_univ_kepanjen.webp" alt="Logo Universitas Kepanjen" class="w-full h-full object-contain rounded-lg" width="48" height="48" loading="lazy">
           </div>
           <div class="w-full">
-            <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors block truncate">Univ Kepanjen</span>
-            <span class="text-[10px] text-slate-400 font-medium block mt-0.5 truncate">Riset &amp; Mutu</span>
+            <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors block break-words leading-tight">Univ Kepanjen</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5 break-words leading-tight">Riset &amp; Mutu</span>
           </div>
         </div>
 
@@ -896,21 +918,27 @@
   </div>
 </footer>
 
-  <!-- ================= FLOATING ACTION BUTTONS (Reusable Compact Component) ================= -->
-  <div id="floatingCTAs" class="fixed bottom-4 right-4 z-40 flex flex-col sm:flex-row gap-2 items-end sm:items-center transition-all duration-300">
-    <!-- WhatsApp Kemitraan CS Button (Compact) -->
-    <a href="https://wa.me/62895327268977?text=Halo%20Twinnie%20Group,%20saya%20ingin%20mengajukan%20kemitraan%20investasi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold shadow-md bg-white/95 backdrop-blur-sm text-slate-800 border border-emerald-400 hover:bg-emerald-50 hover:border-emerald-500 active:scale-95 transition-all focus-ring" title="Konsultasi Kemitraan WhatsApp" aria-label="Konsultasi kemitraan via WhatsApp ke 0895327268977">
-      <span class="w-2.5 h-2.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
-      <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
-      <span>Kemitraan (WA)</span>
+  <!-- ================= FLOATING ACTION DOCK (Ergonomic Liquid Glass Capsule) ================= -->
+  <aside id="floatingCTAs" class="fixed bottom-4 sm:bottom-6 right-3 sm:right-6 z-40 flex items-center gap-1.5 p-1.5 rounded-full floating-action-dock" aria-label="Aksi Cepat Konsultasi Kemitraan">
+    <!-- WhatsApp Action Button (IR Kemitraan CS) -->
+    <a href="https://wa.me/62895327268977?text=Halo%20Twinnie%20Group,%20saya%20tertarik%20mengajukan%20kemitraan%20investasi.%20Mohon%20jadwalkan%20konsultasi." target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 px-3 py-2 rounded-full text-xs font-bold text-slate-800 hover:text-emerald-700 hover:bg-emerald-50/80 active:scale-95 transition-all focus-ring" title="Konsultasi langsung via WhatsApp Kemitraan" aria-label="Konsultasi kemitraan via WhatsApp ke 0895327268977">
+      <span class="relative flex h-2.5 w-2.5 shrink-0" aria-hidden="true">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+      </span>
+      <svg class="w-4 h-4 text-emerald-600 group-hover:scale-110 transition-transform shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+      <span>Konsultasi WA</span>
     </a>
 
-    <!-- Booking CTA Button (Compact) -->
-    <button type="button" data-open-booking class="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold shadow-md bg-pink-500 hover:bg-pink-600 active:scale-95 text-white transition-all shadow-pink-500/25 border border-pink-400 focus-ring" aria-label="Buka form pemesanan layanan">
-      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-      <span>Pesan Layanan</span>
+    <!-- Divider Specular -->
+    <div class="w-px h-5 bg-slate-200/90 shrink-0" aria-hidden="true"></div>
+
+    <!-- Partnership Action Button (Luminous Maternal Glow) -->
+    <button type="button" data-open-booking class="btn-luminous-primary flex items-center gap-2 px-4 py-2 sm:px-4.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold text-white active:scale-95 transition-all shadow-md focus-ring" aria-label="Buka formulir pengajuan kemitraan">
+      <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+      <span>Ajukan Kemitraan</span>
     </button>
-  </div>
+  </aside>
 
   <!-- ================= UNIFIED REACTIVE BOOKING MODAL ================= -->
 <div id="bookingModal" class="fixed inset-0 z-50 hidden items-center justify-center p-0 sm:p-3 lg:p-5 xl:p-6 modal-backdrop-anim" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -1008,7 +1036,7 @@
           <div class="flex items-center justify-between gap-2 border-b border-rose-100 pb-2 lg:pb-0 lg:border-b-0">
             <div class="min-w-0 flex-1">
               <span class="text-[10px] font-bold text-rose-600 uppercase tracking-wider block">Paket Terpilih</span>
-              <h3 id="previewTitle" class="font-heading font-extrabold text-sm sm:text-base lg:text-xl text-slate-900 leading-snug truncate">
+              <h3 id="previewTitle" class="font-heading font-extrabold text-sm sm:text-base lg:text-xl text-slate-900 leading-snug break-words">
                 Nama Paket Layanan
               </h3>
             </div>
@@ -1041,7 +1069,7 @@
           </div>
 
           <!-- Rincian Biaya Transparan (Hidden on mobile for compact 1-view, full on laptop) -->
-          <div class="hidden lg:block p-4 rounded-2xl bg-[#FFFDF9] border border-pink-100 shadow-2xs space-y-3">
+          <div class="hidden lg:block p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-3">
             <span class="text-xs font-bold text-slate-800 uppercase tracking-wide block border-b border-pink-100 pb-2">
               Rincian Biaya Resmi:
             </span>
