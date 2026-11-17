@@ -49,7 +49,7 @@
   transform: translateZ(0);
 }
 
-/* Parallax Alternating Section Architecture - Zero Whitespace (Instructions 1 & 2) */
+/* Parallax Alternating Section Architecture */
 .parallax-section {
   position: relative;
   overflow: hidden;
@@ -125,13 +125,11 @@
   box-shadow: 0 -10px 30px -5px rgba(15, 23, 42, 0.05), 0 10px 30px -5px rgba(15, 23, 42, 0.05);
 }
 
-/* Warm Luxury Obsidian Footer (Instruction 5 - Warm Maternal Velvet Depth) */
+/* Warm Luxury Obsidian Footer */
 .footer-warm-dark {
   background-color: #0e0912 !important;
-  background-image: 
-    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(225, 29, 72, 0.16) 0%, transparent 75%),
-    linear-gradient(180deg, #140d18 0%, #0c0710 100%) !important;
-  border-top: 1px solid rgba(244, 63, 94, 0.25) !important;
+  background-image: linear-gradient(180deg, #140d18 0%, #0c0710 100%) !important;
+  border-top: 1px solid rgba(244, 63, 94, 0.20) !important;
 }
 
 /* Soft Downward Fade for seamless transition into solid content (Subtle & Natural) */

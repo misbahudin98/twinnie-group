@@ -35,7 +35,7 @@ Twinnie Group adalah jaringan kesehatan integratif keluarga berbasis di Malang R
   - `components/floating-action.html`: Tombol melayang compact (`px-3.5 py-2` / `px-4 py-2`) memuat WhatsApp Kemitraan (`+62 895-327-268977`) dan "Pesan Layanan" yang konsisten di semua halaman.
   - `components/booking-modal.html`: Modal pemesanan responsif (Laptop 3-kolom lega vs HP 1-tampilan cohesive tanpa scroll panjang).
   - `components/footer.html`: Master footer memuat strip 9 mitra resmi lengkap dengan logo dan nama, alamat cabang, link peta outlet, kontak WhatsApp, serta hak cipta. Digunakan ulang secara konsisten di `index.html`, `tentang-kami.html`, dan `kemitraan.html` via static reuse dan didukung helper dinamis `loadModularComponents()` di `main.js`.
-  - `README.md`: Panduan arsitektur lengkap dan riwayat pembuatan proyek dari nol untuk junior web developer.
+  - `README.md`: Panduan arsitektur lengkap dan dokumentasi teknis sistem Twinnie Group.
 - **Kontak WhatsApp Resmi**:
   - Investor Relations & Kemitraan: `+62 895-327-268977`
   - Layanan Ibu & Bayi (Twinnie Care): `+62 897-270-3833`
@@ -65,7 +65,7 @@ Setiap mitra ditampilkan di footer seluruh halaman dengan logo circular dan labe
 
 ---
 
-## 4. Ekstraksi Katalog Layanan & Kebijakan Allura Visit Outlet (Instructions 5 & 6)
+## 4. Ekstraksi Katalog Layanan & Kebijakan Allura Visit Outlet
 
 ### A. Kategori Twinnie Care - Ibu, Bayi & Anak (`baby-spa`) - Outlet: Twinnie Care
 *Seluruh paket perawatan ibu (maternal care) kini dipusatkan ke Twinnie Care bersama layanan bayi & anak, dapat dikunjungi ke outlet atau dipanggil ke rumah (Home Visit Malang & Batu maks 10km).*
@@ -96,7 +96,7 @@ Setiap mitra ditampilkan di footer seluruh halaman dengan logo circular dan labe
 - **Pijat Relaksasi Aromaterapi Full Body Ibu**: Outlet Rp 165.000 | Home Visit Rp 180.000 (90 Menit)
 - *Add-ons*: Pergantian Air Kolam Baru (+Rp 30.000), Cuci Hidung Steril (+Rp 35.000), Masker Nebulizer Baru (+Rp 30.000), Additional Bath (+Rp 15.000), Tambah Durasi Relaksasi 30 Menit (+Rp 30.000), Minyak Aromaterapi Premium (+Rp 35.000).
 
-### B. Kategori Allura Woman Spa (`woman-spa`) - VISIT OUTLET & LANGSUNG CHAT WA (Instructions 5 & 6)
+### B. Kategori Allura Woman Spa (`woman-spa`) - VISIT OUTLET & LANGSUNG CHAT WA
 *Catatan: Seluruh paket pelatihan/diklat telah dihapuskan 100%. Allura difokuskan khusus visit outlet & langsung chat WhatsApp.*
 - **Layanan Allura Woman Spa**: Kunjungan langsung ke Outlet Allura Daily Spa (Jl. Kadaka No.11, Lowokwaru, Malang).
 - **Sistem Reservasi**: Pengunjung dapat membuka rute lokasi Google Maps langsung atau menekan tombol **Chat WhatsApp** (`+62 897-270-3833`) untuk konsultasi dan penyesuaian jadwal terapis.
@@ -142,15 +142,15 @@ Setiap mitra ditampilkan di footer seluruh halaman dengan logo circular dan labe
    - Container `.parallax-section` disematkan `isolation: isolate; z-index: 1; position: relative; overflow: hidden;` agar child layer tidak terperosok ke belakang background solid `<body>`.
    - Layer foto `.parallax-bg-layer` diset pada `z-index: 1;`.
    - Tirai solid `.curtain-solid-section` diset pada `z-index: 20;` sehingga meluncur tepat di atas layer foto tanpa terpotong.
-3. **Layer Penutup Rose Sesuai Best Practice & Footer Ergonomis (Instructions 6, 7 & 8)**:
+3. **Layer Penutup Rose & Footer Ergonomis**:
    - Layer penutup gambar rose `.hero-pink-glass-layer`, `.accent-overlay`, dan `.parallax-rose-veil` menggunakan formula gradien maternal terbaik: `linear-gradient(135deg, rgba(225, 29, 72, 0.88) 0%, rgba(236, 72, 153, 0.84) 50%, rgba(244, 63, 94, 0.82) 100%)` (desktop: `0.86` s/d `0.80`) dengan `mix-blend-mode: multiply;` (bebas backdrop-filter blur) + `.hero-readability` gradien dua arah (top shadow tipis + soft dissolve ke `#FFFDF9`).
    - Diterapkan secara seragam dan konsisten pada `index.html`, `tentang-kami.html`, dan `kemitraan.html`. Teks putih hero menyala tajam dan hidup dengan rasio kontras > 8.5:1.
-   - Setting komponen footer: kanvas memenuhi layar penuh dengan kelas .footer-warm-dark (background-color: #0e0912; radial-gradient mawar; border-top: 1px solid rgba(244,63,94,0.25)) dan ambient rose halo (h-36 bg-rose-500/10 blur-3xl), container dalam ergonomis max-w-7xl mx-auto px-4 sm:px-6 lg:px-8, kartu partner translusen bg-white/[0.04] dengan wadah logo putih bersih, dan navigasi 4 kolom yang seragam di ketiga halaman.
+   - Setting komponen footer: kanvas memenuhi layar penuh dengan kelas .footer-warm-dark (background obsidian maternal #140d18 ke #0c0710; border-top: 1px solid rgba(76, 5, 25, 0.6)), bebas dari blur glow artifisial, container dalam ergonomis max-w-7xl mx-auto px-4 sm:px-6 lg:px-8, kartu partner translusen bg-white/[0.04] dengan wadah logo putih bersih, dan navigasi 4 kolom yang seragam di ketiga halaman.
    - Harmoni tipografi & kontras: section berlatar rose veil (`#lokasi`, `#tenaga-ahli`) menggunakan teks putih tajam dengan `hero-text-shadow`, sedangkan section berlatar tirai solid menggunakan teks arang gelap `text-slate-900` dengan rasio kontras > 12:1.
 4. **Zero Silent Failure & Aksesibilitas 100% (WCAG 2.1 AA)**:
    - Seluruh elemen button dan link dilengkapi accessible label (`aria-label`) eksplisit.
    - Event delegation pada `booking.js` dan `main.js` mengikat semua trigger `[data-open-booking]` tanpa silent failure.
-   - Tersedia panduan komprehensif `README.md` untuk developer junior mengenai evolusi proyek dari starter legacy hingga arsitektur produksi.
+   - Tersedia panduan komprehensif `README.md` mengenai arsitektur sistem produksi.
 
 ---
 
@@ -179,9 +179,9 @@ Setiap mitra ditampilkan di footer seluruh halaman dengan logo circular dan labe
    - Kartu pulau mengambang mewah (`bg-white/95 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-white/80 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group`).
    - Top brand accent ribbon (Twinnie: Rose/Pink, Allura: Emerald/Teal, Ameera: Indigo/Purple).
    - Bingkai iframe peta interaktif dengan floating badge (`Cabang Lowokwaru`, `Cabang Jatimulyo`, `Cabang Blimbing`) dan penanda `Peta Interaktif`.
-   - Rincian fasilitas terstruktur: 🕒 Jam Operasional, ✨ Layanan Unggulan, 🚗 Fasilitas Penunjang (Parkir, Ruang AC Steril UV-C).
+   - Rincian fasilitas terstruktur: Jam Operasional, Layanan Klinis, Fasilitas Penunjang (Parkir, Ruang AC Steril UV-C).
    - Tombol aksi simetris berkontras tinggi: Buka Rute Google Maps dan Tombol Aksi Utama (Reservasi, WhatsApp, Konsultasi).
 2. **Master Footer Proporsional & Harmonis**:
    - Strip 9 mitra resmi dengan pola grid simetris 3x3 di mobile (`grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9`), wadah logo putih bersih (`w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white p-1`), dan teks anti-wrap (`truncate`).
    - Saluran kontak WhatsApp terpisah dan berkontras tinggi per kategori (Ibu & Bayi, Investor, Psikologi).
-   - Kanvas maternal obsidian hangat (.footer-warm-dark, #0e0912 dengan radial rose glow dan border rose hangat) memenuhi layar penuh dengan container ergonomis max-w-7xl mx-auto px-4 sm:px-6 lg:px-8, serta ambient halo blur di tepi atas.
+   - Kanvas maternal obsidian hangat (.footer-warm-dark, #140d18 ke #0c0710 dengan hairline border border-rose-950/60) memenuhi layar penuh dengan container ergonomis max-w-7xl mx-auto px-4 sm:px-6 lg:px-8.

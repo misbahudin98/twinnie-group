@@ -1,4 +1,4 @@
-<!-- ================= UNIFIED REACTIVE BOOKING MODAL (Expansive Laptop 3-Cols & Mobile 1-View 2-Sections) ================= -->
+<!-- ================= UNIFIED REACTIVE BOOKING MODAL ================= -->
 <div id="bookingModal" class="fixed inset-0 z-50 hidden items-center justify-center p-0 sm:p-3 lg:p-5 xl:p-6 modal-backdrop-anim" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div id="modalOverlay" class="absolute inset-0 bg-black/75 backdrop-blur-md"></div>
 
@@ -9,7 +9,7 @@
     <header class="px-3.5 py-2 sm:px-6 sm:py-3.5 bg-gradient-to-r from-rose-50 via-white to-pink-50 border-b border-rose-100 flex items-center justify-between shrink-0">
       <div class="flex items-center gap-2.5">
         <div class="w-8 h-8 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">
-          ✨
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         </div>
         <div>
           <h2 id="modalTitle" class="font-heading font-extrabold text-sm sm:text-base lg:text-lg text-slate-900 leading-tight">
@@ -37,7 +37,7 @@
     -->
     <div class="flex-1 overflow-y-auto scroll-smooth lg:grid lg:grid-cols-12 lg:divide-x divide-slate-200 bg-slate-50/30">
       
-      <!-- ================= SECTION 1: KHUSUS GAMBAR & VIDEO DISPLAY (HP: SILUET FULL LEBAR 15-20% TINGGI | LAPTOP: 4 COLS) ================= -->
+      <!-- ================= SECTION 1: MEDIA DISPLAY ================= -->
       <section id="modalSectionMedia" class="w-full h-[16vh] sm:h-[18vh] min-h-[110px] max-h-[135px] lg:h-auto lg:max-h-none lg:min-h-0 lg:col-span-4 p-3 sm:p-4 lg:p-6 bg-stone-900 lg:bg-stone-50/70 flex flex-col justify-between border-b lg:border-b-0 border-slate-200 relative shrink-0 overflow-hidden" aria-label="Khusus Gambar dan Video Display">
         
         <!-- Gambar & Video Frame Utama (On mobile: fills the 15-20% silhouette container; On laptop: aspect-[4/3]) -->
@@ -86,7 +86,7 @@
         </div>
       </section>
 
-      <!-- ================= SECTION 2: KETERANGAN PAKET & DETAIL HARGA (HP: COMPACT STRIP | LAPTOP: 4 COLS) ================= -->
+      <!-- ================= SECTION 2: KETERANGAN PAKET & DETAIL HARGA ================= -->
       <section id="modalSectionDetail" class="p-3 sm:p-4 lg:p-6 bg-white lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 border-slate-200 shrink-0" aria-label="Keterangan Paket dan Detail Harga">
         <div class="space-y-2 sm:space-y-3 lg:space-y-4">
           
@@ -160,7 +160,7 @@
         </div>
       </section>
 
-      <!-- ================= SECTION 3: FORMULIR PEMESANAN (HP: MINIMALIS 1 VIEW | LAPTOP: 4 COLS) ================= -->
+      <!-- ================= SECTION 3: FORMULIR PEMESANAN ================= -->
       <section id="modalSectionForm" class="p-3 sm:p-4 lg:p-6 bg-slate-50/50 lg:col-span-4 flex flex-col justify-between" aria-label="Formulir Pemesanan">
         <div>
           <div class="hidden lg:flex items-center justify-between pb-2 border-b border-slate-200 mb-3">

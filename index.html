@@ -160,7 +160,7 @@
   <aside aria-label="Pengumuman Wilayah Layanan" class="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 text-white text-xs sm:text-sm py-2 px-4 relative z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
         <span class="font-medium">Layanan Home Visit Area Kota Malang, Kab. Malang &amp; Kota Batu (Maks. 10km) • Terapis Bidan &amp; Medis Datang ke Rumah</span>
       </div>
       <a href="https://www.instagram.com/twinnie_care/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 font-medium hover:underline opacity-95">
@@ -234,11 +234,11 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION (GAMBAR 1: Parallax Background + Lapisan Kaca Transparan Merah Muda - Instructions 5 & 6) ================= -->
+  <!-- ================= HERO SECTION ================= -->
   <section id="hero" class="relative min-h-[78vh] lg:min-h-[88vh] flex items-center overflow-hidden parallax-section" aria-labelledby="hero-title">
     <!-- Parallax Background Layer (GPU Accelerated) -->
     <div id="hero-bg" class="parallax-bg-layer" style="background-image: url('assets/img/hero-3.jpg');" data-parallax-speed="0.22"></div>
-    <!-- Lapisan Kaca Transparan Merah Muda (Instruction 5) -->
+    <!-- Translucent Frosted Veil Layer -->
     <div class="hero-pink-glass-layer"></div>
     <div class="hero-readability pointer-events-none"></div>
 
@@ -273,10 +273,11 @@
             Perawatan lembut baby spa, terapi batuk pilek anak, pijat laktasi ibu, dan terapi medik komprehensif berlisensi resmi di Malang Raya. Ditangani langsung oleh bidan profesional dan fisioterapis berpengalaman dengan standar higienis steril.
           </p>
 
-          <!-- Detail Home Visit Area (Instruction 8) -->
+          <!-- Coverage Area Details -->
           <div class="pt-0.5">
             <span class="inline-flex items-center gap-1.5 text-xs text-rose-100 bg-white/15 backdrop-blur-md border border-white/25 px-3 py-1.5 rounded-xl font-medium shadow-xs">
-              🚐 <strong>Home Visit:</strong> Area Kota Malang, Kab. Malang &amp; Kota Batu maks. 10km dari cabang terdekat
+              <svg class="w-4 h-4 text-rose-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span><strong>Home Visit:</strong> Area Kota Malang, Kab. Malang &amp; Kota Batu maks. 10km dari cabang terdekat</span>
             </span>
           </div>
 
@@ -448,7 +449,7 @@
     </div>
   </section>
 
-  <!-- ================= LAYANAN UTAMA (WARNA 1: Curtain Solid Section - Menyembunyikan Background - Instruction 7) ================= -->
+  <!-- ================= LAYANAN UTAMA ================= -->
   <section id="layanan" class="curtain-solid-section py-20 bg-[#FFFDF9] border-y border-stone-200/70 relative z-10" aria-labelledby="layanan-title">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -465,7 +466,7 @@
         </p>
       </div>
 
-      <!-- Home Visit Coverage Detail Card (Instruction 8) -->
+      <!-- Coverage Area Details Card -->
       <div class="mb-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-pink-50 via-rose-50 to-stone-50 border border-pink-200/80 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-pink-500 text-white flex items-center justify-center shrink-0 shadow-sm">
@@ -487,7 +488,7 @@
       <!-- Interactive Category Switcher (Sabilillah-grade responsive tab switcher) -->
       <div class="mb-10 flex flex-wrap items-center justify-center gap-2" id="serviceCategoryTabs" role="tablist" aria-label="Filter Kategori Layanan">
         <button type="button" data-filter="all" class="category-tab-btn active px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 bg-pink-500 text-white shadow-md shadow-pink-500/25 active:scale-95" role="tab" aria-selected="true">
-          ✨ Semua Layanan
+          Semua Layanan
         </button>
         <button type="button" data-filter="baby" class="category-tab-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-pink-600 border border-slate-200/80 shadow-2xs active:scale-95" role="tab" aria-selected="false">
           👶 Ibu &amp; Bayi (Twinnie Care)
@@ -610,7 +611,7 @@
 
 
 
-  <!-- ================= FOKUS UTAMA (GAMBAR 2: Parallax Section - Menampilkan Background) ================= -->
+  <!-- ================= TESTIMONI & DOKUMENTASI KLINIS ================= -->
   <section id="testimonials" class="parallax-section py-20 relative" aria-labelledby="testi-title">
     <!-- Parallax Background Layer (GPU Accelerated & Safe Clamped) -->
     <div class="parallax-bg-layer" style="background-image: url('assets/img/bekam.jpg');" data-parallax-speed="0.12"></div>
@@ -622,7 +623,7 @@
       <!-- Section Header -->
       <div class="text-center max-w-2xl mx-auto mb-14">
         <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold text-xs mb-3 shadow-xs">
-          ✨ Bukti Nyata &amp; Kepuasan Keluarga
+          Bukti Nyata &amp; Kepuasan Keluarga
         </span>
         <h2 id="testi-title" class="text-3xl sm:text-4xl font-heading font-black text-white tracking-tight hero-text-shadow">
           Cerita Pemulihan &amp; Testimoni Pasien
@@ -756,7 +757,7 @@
             <span>Tangkapan Layar Kepuasan Pasien (3 Chat Autentik WhatsApp)</span>
           </h3>
           <span class="text-xs font-semibold text-rose-100/90 hero-text-shadow">
-            ✨ Sentuh gambar untuk memperbesar resolusi HD
+            Ketuk gambar untuk memperbesar tangkapan layar
           </span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -818,7 +819,7 @@
     </div>
   </section>
 
-  <!-- ================= DEWAN TENAGA AHLI (WARNA 2: Curtain Solid Section - Menyembunyikan Background - Instruction 7) ================= -->
+  <!-- ================= DEWAN TENAGA AHLI ================= -->
   <section class="curtain-solid-section py-16 bg-[#FFFDF9] border-y border-stone-200/70 relative z-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8">
@@ -859,7 +860,7 @@
     </div>
   </section>
 
-  <!-- ================= JARINGAN OUTLET (GAMBAR 3: Parallax Section - Menampilkan Background) ================= -->
+  <!-- ================= JARINGAN OUTLET RESMI ================= -->
   <section id="lokasi" class="parallax-section py-20 relative" aria-labelledby="lokasi-title">
     <!-- Parallax Background Layer (GPU Accelerated & Safe Clamped HD) -->
     <div class="parallax-bg-layer" style="background-image: url('assets/img/woman-allura.jpg');" data-parallax-speed="0.12"></div>
@@ -881,7 +882,7 @@
         </p>
       </div>
 
-      <!-- Symmetrical 3-Column Outlet Cards Grid with Interactive Map IFrames (Instruction 5 & 6) -->
+      <!-- 3-Column Outlet Cards Grid with Interactive Map IFrames -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         
         <!-- Outlet 1: Twinnie Care & Nimpuna -->
@@ -928,15 +929,21 @@
             <!-- Facilities and Schedule Info -->
             <div class="mt-3 space-y-1.5 text-xs text-slate-600">
               <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-pink-100/80 text-pink-700 flex items-center justify-center font-bold text-xs shrink-0">🕒</span>
+                <span class="w-5 h-5 rounded-md bg-pink-100/80 text-pink-700 flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </span>
                 <span><strong>Jam:</strong> Buka Setiap Hari (08.00 - 17.00 WIB)</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-emerald-100/80 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0">✨</span>
+                <span class="w-5 h-5 rounded-md bg-emerald-100/80 text-emerald-700 flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </span>
                 <span><strong>Layanan:</strong> Baby Spa Whirlpool, Batuk Pilek &amp; Bekam</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs shrink-0">🚗</span>
+                <span class="w-5 h-5 rounded-md bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                </span>
                 <span><strong>Fasilitas:</strong> Parkir Nyaman, Ruang Ber-AC Steril UV-C</span>
               </div>
             </div>
@@ -998,15 +1005,21 @@
             <!-- Facilities and Schedule Info -->
             <div class="mt-3 space-y-1.5 text-xs text-slate-600">
               <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-emerald-100/80 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0">🕒</span>
+                <span class="w-5 h-5 rounded-md bg-emerald-100/80 text-emerald-700 flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </span>
                 <span><strong>Jam:</strong> Selasa - Minggu (08.30 - 17.00 WIB)</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-purple-100/80 text-purple-700 flex items-center justify-center font-bold text-xs shrink-0">✨</span>
+                <span class="w-5 h-5 rounded-md bg-purple-100/80 text-purple-700 flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </span>
                 <span><strong>Layanan:</strong> Relaksasi Tubuh, Spa, Face Care &amp; Ratus</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs shrink-0">🚗</span>
+                <span class="w-5 h-5 rounded-md bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                </span>
                 <span><strong>Fasilitas:</strong> Private Treatment Room, Parkir Aman</span>
               </div>
             </div>
@@ -1069,15 +1082,21 @@
             <!-- Facilities and Schedule Info -->
             <div class="mt-3 space-y-1.5 text-xs text-slate-600">
               <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-indigo-100/80 text-indigo-700 flex items-center justify-center font-bold text-xs shrink-0">🕒</span>
+                <span class="w-5 h-5 rounded-md bg-indigo-100/80 text-indigo-700 flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </span>
                 <span><strong>Jam:</strong> Senin - Sabtu (Sesuai Janji Temu Terjadwal)</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-purple-100/80 text-purple-700 flex items-center justify-center font-bold text-xs shrink-0">✨</span>
+                <span class="w-5 h-5 rounded-md bg-purple-100/80 text-purple-700 flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </span>
                 <span><strong>Layanan:</strong> Baby Blues, Hipnoterapi &amp; Konseling Tumbuh Kembang</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs shrink-0">🚗</span>
+                <span class="w-5 h-5 rounded-md bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                </span>
                 <span><strong>Fasilitas:</strong> Konseling Privat Kedap Suara, Konsultasi Online/Offline</span>
               </div>
             </div>
@@ -1100,7 +1119,7 @@
     </div>
   </section>
 
-  <!-- ================= PERTANYAAN UMUM (WARNA 3: Curtain Solid Section - Menyembunyikan Background - Instruction 7) ================= -->
+  <!-- ================= PERTANYAAN UMUM (FAQ) ================= -->
   <section id="faq" class="curtain-solid-section py-16 bg-[#FFFDF9] border-t border-slate-200/80 relative z-10" aria-labelledby="faq-title">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
@@ -1154,18 +1173,16 @@
     </div>
   </section>
 
-  <!-- ================= SITE FOOTER WITH 9 PARTNER LOGOS & NAMES (WARNA 4: Curtain Solid Section - Instruction 7 & 8) ================= -->
+  <!-- ================= SITE FOOTER WITH 9 PARTNER LOGOS & NAMES ================= -->
   <footer id="siteFooter" class="curtain-solid-section footer-warm-dark text-slate-200 pt-16 pb-12 text-sm relative z-20 w-full overflow-hidden">
-    <!-- Subtle Ambient Rose Radial Glow (Warm Maternal Atmospheric Depth) -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-36 bg-rose-500/10 blur-3xl pointer-events-none -z-0" aria-hidden="true"></div>
-
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- DEDICATED PARTNER STRIP: LOGO & NAMES -->
       <div class="pb-12 mb-12 border-b border-white/[0.08]">
         <div class="text-center max-w-2xl mx-auto mb-8">
           <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 text-xs font-bold tracking-wider uppercase mb-2.5 shadow-2xs">
-            ✨ Mitra &amp; Afiliasi Resmi
+            <svg class="w-3.5 h-3.5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Mitra &amp; Afiliasi Resmi
           </span>
           <h3 class="font-heading font-extrabold text-white text-lg sm:text-2xl tracking-tight">
             Didukung Jaringan Lembaga &amp; Fasilitas Kesehatan Kredibel
@@ -1298,7 +1315,7 @@
           
           <div class="space-y-2">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs text-slate-200">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
               <span>Buka Setiap Hari (08.00 - 17.00 WIB)</span>
             </div>
             <div>
@@ -1337,7 +1354,8 @@
             </li>
             <li class="pt-1">
               <button type="button" data-open-booking class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-bold text-xs shadow-md hover:shadow-rose-500/25 transition text-left cursor-pointer focus-ring" aria-label="Pesan Layanan Sekarang">
-                <span>✨ Pesan Layanan Sekarang</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <span>Pesan Layanan Sekarang</span>
               </button>
             </li>
           </ul>
@@ -1407,7 +1425,7 @@
       <!-- Copyright -->
       <div class="mt-12 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
         <p>© 2026 Twinnie Group. Seluruh Hak Cipta Dilindungi.</p>
-        <p class="text-slate-500">Kecepatan Sub-Detik • Standar Aksesibilitas WCAG 2.1 AA • SEO Terstruktur</p>
+        <p class="text-slate-400">Layanan Berizin Praktik Resmi • Tenaga Medis &amp; Bidan Tersertifikasi • Malang Raya</p>
       </div>
 
     </div>
@@ -1417,7 +1435,7 @@
   <div id="floatingCTAs" class="fixed bottom-4 right-4 z-40 flex flex-col sm:flex-row gap-2 items-end sm:items-center transition-all duration-300">
     <!-- WhatsApp Kemitraan CS Button (Compact) -->
     <a href="https://wa.me/62895327268977?text=Halo%20Twinnie%20Group,%20saya%20ingin%20mengajukan%20kemitraan%20investasi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold shadow-md bg-white/95 backdrop-blur-sm text-slate-800 border border-emerald-400 hover:bg-emerald-50 hover:border-emerald-500 active:scale-95 transition-all focus-ring" title="Konsultasi Kemitraan WhatsApp" aria-label="Konsultasi kemitraan via WhatsApp ke 0895327268977">
-      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+      <span class="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true"></span>
       <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
       <span>Kemitraan (WA)</span>
     </a>
@@ -1429,7 +1447,7 @@
     </button>
   </div>
 
-  <!-- ================= UNIFIED REACTIVE BOOKING MODAL (Expansive Laptop 3-Cols & Mobile 1-View 2-Sections) ================= -->
+  <!-- ================= UNIFIED REACTIVE BOOKING MODAL ================= -->
   <div id="bookingModal" class="fixed inset-0 z-50 hidden items-center justify-center p-0 sm:p-3 lg:p-5 xl:p-6 modal-backdrop-anim" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div id="modalOverlay" class="absolute inset-0 bg-black/75 backdrop-blur-md"></div>
 
@@ -1440,7 +1458,7 @@
       <header class="px-3.5 py-2 sm:px-6 sm:py-3.5 bg-gradient-to-r from-rose-50 via-white to-pink-50 border-b border-rose-100 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">
-            ✨
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           </div>
           <div>
             <h2 id="modalTitle" class="font-heading font-extrabold text-sm sm:text-base lg:text-lg text-slate-900 leading-tight">
@@ -1468,7 +1486,7 @@
       -->
       <div class="flex-1 overflow-y-auto scroll-smooth lg:grid lg:grid-cols-12 lg:divide-x divide-slate-200 bg-slate-50/30">
         
-        <!-- ================= SECTION 1: KHUSUS GAMBAR & VIDEO DISPLAY (HP: SILUET FULL LEBAR 15-20% TINGGI | LAPTOP: 4 COLS) ================= -->
+        <!-- ================= SECTION 1: MEDIA DISPLAY ================= -->
         <section id="modalSectionMedia" class="w-full h-[16vh] sm:h-[18vh] min-h-[110px] max-h-[135px] lg:h-auto lg:max-h-none lg:min-h-0 lg:col-span-4 p-3 sm:p-4 lg:p-6 bg-stone-900 lg:bg-stone-50/70 flex flex-col justify-between border-b lg:border-b-0 border-slate-200 relative shrink-0 overflow-hidden" aria-label="Khusus Gambar dan Video Display">
           
           <!-- Gambar & Video Frame Utama (On mobile: fills the 15-20% silhouette container; On laptop: aspect-[4/3]) -->
@@ -1517,7 +1535,7 @@
           </div>
         </section>
 
-        <!-- ================= SECTION 2: KETERANGAN PAKET & DETAIL HARGA (HP: COMPACT STRIP | LAPTOP: 4 COLS) ================= -->
+        <!-- ================= SECTION 2: KETERANGAN PAKET & DETAIL HARGA ================= -->
         <section id="modalSectionDetail" class="p-3 sm:p-4 lg:p-6 bg-white lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 border-slate-200 shrink-0" aria-label="Keterangan Paket dan Detail Harga">
           <div class="space-y-2 sm:space-y-3 lg:space-y-4">
             
@@ -1591,7 +1609,7 @@
           </div>
         </section>
 
-        <!-- ================= SECTION 3: FORMULIR PEMESANAN (HP: MINIMALIS 1 VIEW | LAPTOP: 4 COLS) ================= -->
+        <!-- ================= SECTION 3: FORMULIR PEMESANAN ================= -->
         <section id="modalSectionForm" class="p-3 sm:p-4 lg:p-6 bg-slate-50/50 lg:col-span-4 flex flex-col justify-between" aria-label="Formulir Pemesanan">
           <div>
             <div class="hidden lg:flex items-center justify-between pb-2 border-b border-slate-200 mb-3">

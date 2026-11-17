@@ -139,7 +139,7 @@ Seluruh komponen berulang dipisahkan dalam folder `components/` agar seragam, DR
 
 ---
 
-## 5. Integrasi Layanan Twinnie Care & Kebijakan Allura Woman Spa (Instructions 5 & 6)
+## 5. Integrasi Layanan Twinnie Care & Kebijakan Allura Woman Spa
 
 ### A. Pengalihan Paket Perawatan Ibu ke Twinnie Care & Eliminasi Pelatihan
 - **Seluruh paket perawatan ibu (maternal care) dialihkan sepenuhnya ke Twinnie Care (`baby-spa`)**:
@@ -151,7 +151,7 @@ Seluruh komponen berulang dipisahkan dalam folder `components/` agar seragam, DR
   - Seluruh paket komersial pelatihan/diklat terapis baby spa berbayar Allura telah dieliminasi 100% dari katalog layanan dan antarmuka pemesanan.
   - Fokus dipusatkan murni pada pelayanan kesehatan, kenyamanan, dan terapi keluarga.
 
-### B. Allura Woman Spa: Visit Outlet & Langsung Chat WhatsApp (Instruction 6)
+### B. Allura Woman Spa: Visit Outlet & Langsung Chat WhatsApp
 - **Model Layanan Allura Daily Spa**:
   - Allura diposisikan khusus sebagai spa eksklusif wanita dengan skema **Visit Outlet** langsung di Jl. Kadaka No.11 Malang.
   - Menghilangkan kerumitan form bertingkat untuk Allura; seluruh kartu showcase dan tombol aksi menyediakan akses langsung:
@@ -263,8 +263,8 @@ Untuk menghadirkan estetika website yang benar-benar elegan, tenang, hangat, dan
 - Loop multi-section parallax di `main.js` mengecualikan `hero-bg` untuk menghindari komputasi ganda atau flickering.
 - Kecepatan offset parallax diset lembut (`0.15`–`0.22`) untuk kenyamanan visual (*subtle motion*) dan menghormati media query `prefers-reduced-motion`.
 
-### D. Penyelarasan Layer Rose Sesuai Best Practice & Footer Ergonomis (Instructions 6, 7 & 8)
-- **Layer Penutup Gambar Berwarna Rose (Formula Gradien & Opasitas Terbaik - Best Practice)**:
+### D. Penyelarasan Layer Rose & Arsitektur Footer Ergonomis
+- **Layer Penutup Gambar Berwarna Rose (Formula Gradien & Opasitas Terbaik)**:
   * **Kombinasi Warna & Sudut Gradien**: Menggunakan gradien maternal multidimensi `linear-gradient(135deg, rgba(225, 29, 72, 0.88) 0%, rgba(236, 72, 153, 0.84) 50%, rgba(244, 63, 94, 0.82) 100%)` (desktop: `0.86` s/d `0.80`) dengan `mix-blend-mode: multiply;`.
   * **Alasan Desain & Aksesibilitas**:
     1. *Fotografi Tetap Bernapas*: Opasitas 0.82–0.88 memastikan subjek foto (ibu, bayi, terapis klinis) tetap tampak jelas, hangat, dan hidup tanpa tertutup blok warna kaku (menghindari opasitas 0.99 yang mematikan foto).
@@ -276,11 +276,10 @@ Untuk menghadirkan estetika website yang benar-benar elegan, tenang, hangat, dan
     * Menghadirkan bayangan tipis di bagian atas agar header transparan tetap terbaca, dan larut mulus (*soft dissolve*) ke latar belakang warm ivory (`#FFFDF9`) di bagian bawah.
   * **Penerapan Konsisten**: Diterapkan secara identik pada section hero di `index.html`, `tentang-kami.html`, dan `kemitraan.html`.
 
-- **Komponen Footer Sesuai Kombinasi Warna & Best Practice (Warm Maternal Obsidian - Instruction 5 & 7)**:
-  * **Warna Background Maternal Obsidian & Ambient Rose Glow (`.footer-warm-dark`)**:
+- **Komponen Footer Sesuai Kombinasi Warna (Warm Maternal Obsidian)**:
+  * **Warna Background Maternal Obsidian (`.footer-warm-dark`)**:
     * Menggantikan latar slate kebiruan dingin (`bg-slate-900`) yang bertabrakan dengan palet Warm Ivory (`#FFFDF9`) dan Maternal Rose.
-    * Menggunakan formula khusus: `background-color: #0e0912 !important;` dipadukan `radial-gradient(ellipse 90% 50% at 50% 0%, rgba(225, 29, 72, 0.16) 0%, transparent 75%)` dan `linear-gradient(180deg, #140d18 0%, #0c0710 100%) !important;` dengan garis batas atas hangat `border-top: 1px solid rgba(244, 63, 94, 0.25) !important;`.
-    * Dilengkapi halo ambient cahaya mawar halus di puncak footer (`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-36 bg-rose-500/10 blur-3xl pointer-events-none`).
+    * Menggunakan formula khusus: `background-color: #0e0912 !important;` dipadukan `linear-gradient(180deg, #140d18 0%, #0c0710 100%) !important;` dengan garis batas atas hangat `border-top: 1px solid rgba(244, 63, 94, 0.20) !important;`.
   * **Kanvas Memenuhi Layar Penuh (Edge-to-Edge Canvas)**: Menggunakan `<footer id="siteFooter" class="curtain-solid-section footer-warm-dark text-slate-200 pt-16 pb-12 text-sm relative z-20 w-full overflow-hidden">` yang mengisi 100% lebar layar viewport tanpa celah tepi.
   * **Kontainer Konten Ergonomis**: Menggunakan pembatas dalam `w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8` agar pada resolusi ultrawide (1440p, 4K) kolom informasi tidak terlempar ke sudut ekstrem, menjaga kenyamanan pemindaian mata manusia (*visual ergonomics*).
   * **Kartu Mitra Translusen Mewah (Translucent Glass Partner Cards)**: Menggunakan permukaan kaca lembut `bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-pink-400/50 backdrop-blur-2xs shadow-2xs` dengan wadah logo putih bersih (`w-11 h-11 sm:w-12 sm:h-12 bg-white p-1 rounded-xl shadow-md`), memastikan seluruh logo mitra tampil tajam, bersih, dan berwibawa.
@@ -290,7 +289,7 @@ Untuk menghadirkan estetika website yang benar-benar elegan, tenang, hangat, dan
     - Nimpuna & Kemitraan: Aksen Emerald/Teal (`text-white group-hover:text-emerald-300`)
     - Biro Psikologi: Aksen Indigo (`text-white group-hover:text-indigo-300`)
 
-- **Harmoni Elemen Halaman dan Tulisan Lintas Halaman (Instruction 8)**:
+- **Harmoni Elemen Halaman dan Tulisan Lintas Halaman**:
   * **Prinsip Kontras Latar vs Teks**:
     - Section berlatar foto dengan veil rose gelap (`.parallax-rose-veil`, seperti `#lokasi` dan `#tenaga-ahli`): Tajuk section menggunakan teks putih (`text-white font-black tracking-tight hero-text-shadow`) dengan badge pil transparan (`bg-white/20 text-white border border-white/30`).
     - Kartu konten di atasnya menggunakan gaya *floating white island* (`bg-white rounded-3xl shadow-xl`) dengan teks arang gelap (`text-slate-900`) untuk kontras tajam > 12:1.
@@ -358,15 +357,15 @@ Untuk menghadirkan estetika yang anggun, hangat, dan sangat terpercaya bagi calo
 3. **Bingkai Peta Interaktif (App-Framed Map Embed)**:
    - Iframe peta Google Maps beresolusi tinggi (`h-52 rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner`).
    - Dilengkapi **Badge Mengambang Kaca** di sudut atas:
-     * Sudut Kiri Atas: Pill status operasional dengan titik animasi berdenyut (`Cabang Lowokwaru`, `Cabang Jatimulyo`, `Cabang Blimbing`).
+     * Sudut Kiri Atas: Pill status operasional dengan titik status solid terpercaya (`Cabang Lowokwaru`, `Cabang Jatimulyo`, `Cabang Blimbing`).
      * Sudut Kanan Atas: Penanda interaktivitas `Peta Interaktif`.
      * Menghilangkan kesan iframe mentah tanpa konteks dan mengubahnya menjadi modul antarmuka aplikasi modern (*app-like interface*).
 4. **Kotak Alamat Jelas & Rincian Fasilitas Penunjang**:
-   - Alamat terkurung rapi dalam kontainer `bg-slate-50/90 p-2.5 rounded-xl border border-slate-100` dengan ikon pin lokasi.
-   - Baris metadata fasilitas terstruktur:
-     * 🕒 **Jam Operasional**: Jadwal buka jelas.
-     * ✨ **Layanan Unggulan**: Ringkasan tindakan utama.
-     * 🚗 **Fasilitas Penunjang**: Parkir nyaman, ruang ber-AC steril UV-C, dan ruang konsultasi privat kedap suara.
+   - Alamat terkurung rapi dalam kontainer `bg-slate-50/90 p-2.5 rounded-xl border border-slate-100` dengan ikon pin lokasi SVG.
+   - Baris metadata fasilitas terstruktur dengan ikon SVG presisi:
+     * **Jam Operasional**: Jadwal buka jelas.
+     * **Layanan Klinis**: Ringkasan tindakan utama.
+     * **Fasilitas Penunjang**: Parkir nyaman, ruang ber-AC steril UV-C, dan ruang konsultasi privat kedap suara.
 5. **Tombol Aksi Simetris Bergradien**:
    - Tombol Kiri: `Buka Rute` dengan ikon peta Google Maps berbingkai lembut.
    - Tombol Kanan: Aksi utama bergradasi tajam (`Reservasi` dengan `data-open-booking`, `WhatsApp` khusus Allura, dan `Konsultasi` psikologi).
@@ -385,10 +384,10 @@ Untuk menghadirkan estetika yang anggun, hangat, dan sangat terpercaya bagi calo
      * 🧠 **Psikologi Klinis**: Teks Indigo (`text-indigo-400`).
 4. **Palet Warna Background Hangat (Warm Obsidian vs Cool Slate)**:
    - Menghilangkan kesan kusam dari warna `bg-slate-900` yang dingin dan kebiruan.
-   - Mengadopsi kelas `.footer-warm-dark` dengan latar hitam obsidian hangat `#0e0912` dan gradien vertikal ke `#0c0710`, dipadukan radial rose glow `rgba(225, 29, 72, 0.16)` dan border atas hangat `rgba(244, 63, 94, 0.25)`.
+   - Mengadopsi kelas `.footer-warm-dark` dengan latar hitam obsidian hangat `#140d18` dan gradien vertikal ke `#0c0710`, dipadukan border atas presisi `border-t border-rose-950/60`.
    - Menghadirkan transisi visual yang alami dan elegan dari latar Warm Ivory (`#FFFDF9`) di section atasnya ke area footer.
-5. **Atmospheric Ambient Rose Glow & Glassmorphism Translusen**:
-   - Di puncak footer terpasang layer blur atmosferik (`h-36 bg-rose-500/10 blur-3xl`) yang memberikan kedalaman mewah bagai pencahayaan panggung teater (*ambient backstage glow*).
+5. **Permukaan Solid Maternal Obsidian & Kartu Translusen Elegan**:
+   - Menghilangkan efek blur glow artifisial (`blur-3xl`) yang klise, beralih ke permukaan solid obsidian dengan batas hairline 1px presisi.
    - Seluruh kartu partner dan link menggunakan permukaan semi-transparan `bg-white/[0.04]` dengan batas `border-white/[0.08]` yang berpendar lembut saat disentuh kursor (`hover:bg-white/[0.08] hover:border-pink-400/50`).
 
 
@@ -421,6 +420,10 @@ Untuk menjamin alur pandang mata yang tenang, mewah, dan bebas disonansi visual 
 2. **Harmonisasi Slogan Emosional & Proposisi Nilai Nyata (StoryBrand Grunt Test)**:
    - Menjaga kredo orisinal *“Ketulusan Hati Membawa Keajaiban”* sebagai kicker emosional di atas judul utama.
    - Menyelaraskan H1 utama menjadi **“Layanan Bidan & Terapi Medis Keluarga ke Rumah Anda”** agar dalam 5 detik pertama pengunjung langsung memahami esensi layanan, wilayah jangkauan, dan tindakan yang harus diambil.
+3. **Eliminasi Artefak Visual AI (Fake Pulsing Dots, Blurry Glow Blobs & Sparkle Emojis)**:
+   - Menghapus 19 titik pulsing statis (`animate-pulse`) pada badge dan chip status non-telemetri, menggantikannya dengan indikator solid stabil.
+   - Menghilangkan ambient blur blob (`h-36 bg-rose-500/10 blur-3xl`) pada footer, menggantikannya dengan gradasi obsidian hangat alami dan hairline border 1px presisi (`border-t border-rose-950/60`).
+   - Mengganti seluruh emoji artifisial (seperti kilauan `✨`, jam `🕒`, mobil `🚗`) dengan ikon SVG berstandar medis yang tajam dan profesional.
 
 ### B. Normalisasi Tipografi Ramah Lansia (Baby Boomer Accessibility WCAG AAA)
 1. **Eliminasi Teks Mikro (Anti Micro-Text Trap)**:

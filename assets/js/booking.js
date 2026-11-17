@@ -196,7 +196,7 @@
   }
 
   /**
-   * Check Home Visit support for selected package & enforce Woman Spa outlet-only rule (Instruction 6)
+   * Check Home Visit support for selected package & enforce Woman Spa outlet-only rule
    */
   function handleHomevisitSupportCheck() {
     const isWomanSpa = currentServiceKey === 'woman-spa';
@@ -399,7 +399,7 @@
 
 🏢 *LOKASI:* Outlet Allura Woman Spa
 📍 *Alamat:* Jl. Kadaka No.11, Jatimulyo, Lowokwaru, Kota Malang
-✨ *Tipe Reservasi:* Visit Langsung ke Outlet & Konsultasi Perawatan
+📋 *Tipe Reservasi:* Visit Langsung ke Outlet & Konsultasi Perawatan
 
 📝 *Catatan / Pertanyaan:*
 "${formData.notes || 'Saya ingin reservasi dan konsultasi perawatan langsung saat tiba di outlet.'}"
@@ -423,7 +423,7 @@ Mohon konfirmasi ketersediaan jadwal terapis di outlet Allura. Terima kasih!`;
 ⏰ *Jam Reservasi:* ${formData.time} WIB
 
 🏷 *Layanan:* ${summary.svc.title}
-✨ *Paket Dipilih:* ${summary.pkg.name}
+📦 *Paket Dipilih:* ${summary.pkg.name}
 ⏱ *Durasi:* ${summary.pkg.duration}
 ${locText}
 

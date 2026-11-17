@@ -77,7 +77,7 @@
 
   /**
    * Parallax Scroll Effect (GPU Accelerated, Lightweight with rAF)
-   * Mathematically clamped to prevent any bottom/top gap or whitespace (Instructions 1 & 2)
+   * Mathematically clamped to prevent any bottom/top gap or whitespace
    */
   let isParallaxTicking = false;
   function handleParallaxScroll() {
@@ -452,7 +452,7 @@
       if (e.key === 'ArrowRight') nextService();
     });
 
-    // Touch Swipe Gesture for Hero Media Frame (Instruction 8)
+    // Touch Swipe Gesture for Hero Media Frame
     const mediaViewport = dom.heroMediaViewport || document.getElementById('heroMediaViewport');
     if (mediaViewport) {
       let touchStartX = 0;
@@ -569,7 +569,7 @@
   }
 
   /**
-   * Modular Component Loader (Helper for Junior Developers - Instruction 7)
+   * Modular Component Loader
    * Automatically replaces placeholders like <div data-component="components/footer.html"></div>
    * when served over HTTP/HTTPS, while maintaining static fallback for file:// protocol.
    */
